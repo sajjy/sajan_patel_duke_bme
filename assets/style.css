@@ -1,19 +1,19 @@
-/* body {
+body {
   font-family: "Segoe UI", Roboto, sans-serif;
   background: #f5f7fa;
   color: #333;
   margin: 0;
   display: flex;
-} */
+}
 
  /* General Page Background */
-body {
+/* body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background: linear-gradient(to right, #f0f4f8, #e0eaf3);
   color: #333;
   margin: 0;
   padding: 0;
-}
+} */
 
 /* Card Layout */
 .card {
