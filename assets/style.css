@@ -4,6 +4,14 @@ body {
   color: #333;
   margin: 0;
   display: flex;
+  animation: gradientShift 15s ease infinite;
+  scroll-behavior: smooth;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .sidebar {
@@ -13,6 +21,10 @@ body {
   min-height: 100vh;
   padding: 2rem 1rem;
   box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
 }
 
 .sidebar h1 {
@@ -40,6 +52,8 @@ body {
   color: #edf2f4;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s ease;
+
 }
 
 .sidebar nav ul li a:hover {
@@ -52,6 +66,10 @@ body {
   display: block;
   margin: 0 auto 1rem;
   border: 3px solid #fff;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
 }
 
 main {
@@ -95,6 +113,7 @@ section h2 {
   border-radius: 8px;
   margin-bottom: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: background 0.2s ease;
 }
 
 .project-card:hover {
