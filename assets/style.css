@@ -6,38 +6,6 @@ body {
   display: flex;
 }
 
- /* General Page Background */
-/* body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(to right, #f0f4f8, #e0eaf3);
-  color: #333;
-  margin: 0;
-  padding: 0;
-} */
-
-/* Card Layout */
-.card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 800px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Hover Effect */
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-}
-
-/* Headings */
-h2, h3 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #2c3e50;
-}
-
 .sidebar {
   background: #2b2d42;
   color: #fff;
@@ -78,30 +46,12 @@ h2, h3 {
   color: #ef233c;
 }
 
-/* .profile-pic {
+.profile-pic {
   width: 120px;
   border-radius: 50%;
   display: block;
   margin: 0 auto 1rem;
   border: 3px solid #fff;
-} */
-
-/* Profile Picture */
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 30px auto 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  border: 3px solid white;
-  background: white;
-  transition: transform 0.2s ease;
-}
-
-.profile-pic:hover {
-  transform: scale(1.05);
 }
 
 main {
@@ -123,26 +73,12 @@ section h2 {
   margin-top: 0;
 }
 
-/* .project-card {
+.project-card {
   background: #f8f9fa;
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-} */
-
-/* Project Cards */
-.project-card {
-  background: #f9fafb;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: background 0.2s ease;
-}
-
-.project-card:hover {
-  background: #eef2f7;
 }
 
 .project-card h3 {
