@@ -35,10 +35,23 @@
   </footer>
 
   <script>
-    document.querySelector(".menu-toggle").addEventListener("click", function () {
-      document.querySelector(".sidebar").classList.toggle("open");
+    const sidebar = document.querySelector(".sidebar");
+    const toggleBtn = document.querySelector(".menu-toggle");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+    });
+
+    // Close sidebar when a nav link is clicked (mobile)
+    document.querySelectorAll(".sidebar nav ul li a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          sidebar.classList.remove("open");
+        }
+      });
     });
   </script>
-  
+
+
 </body>
 </html>

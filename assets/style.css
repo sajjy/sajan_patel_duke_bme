@@ -78,13 +78,22 @@ body {
   margin: 0 auto;
 } */
 
+/* main.content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-left: 270px;
+} */
+
 main.content {
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-  margin-left: 270px; /* Pushes content to the right of the sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers cards */
+  margin-left: 270px; /* keeps spacing for sidebar on desktop */
 }
-
 
 section {
   background: #fff;
@@ -105,7 +114,7 @@ section h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
   padding: 20px;
-  max-width: 800px;
+  max-width: 700px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
