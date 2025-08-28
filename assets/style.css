@@ -181,6 +181,10 @@ a:hover {
   transition: transform 0.3s ease-in-out;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Mobile - hide sidebar by default */
 @media (max-width: 768px) {
   .menu-toggle {
