@@ -72,11 +72,19 @@ body {
   transform: scale(1.05);
 }
 
-main {
+/* main {
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
+} */
+
+main.content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-left: 270px; /* Pushes content to the right of the sidebar */
 }
+
 
 section {
   background: #fff;
@@ -131,4 +139,61 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #2b2d42;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Sidebar - default desktop */
+.sidebar {
+  background: #2b2d42;
+  color: #fff;
+  width: 250px;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile - hide sidebar by default */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  main.content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main.content {
+    margin-left: 0;
+  }
 }

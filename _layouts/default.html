@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
+
+  <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+  
   <aside class="sidebar">
     <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Profile Picture" class="profile-pic">
     <h1>{{ site.title }}</h1>
@@ -30,5 +33,12 @@
   <footer>
     <p>© {{ site.time | date: "%Y" }} {{ site.title }}</p>
   </footer>
+
+  <script>
+    document.querySelector(".menu-toggle").addEventListener("click", function () {
+      document.querySelector(".sidebar").classList.toggle("open");
+    });
+  </script>
+  
 </body>
 </html>
