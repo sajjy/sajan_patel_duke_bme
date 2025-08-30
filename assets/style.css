@@ -2,8 +2,8 @@ body {
   /* font-family: "Segoe UI", Roboto, sans-serif;
    */
   font-family: Inter, Arial, Helvetica, sans-serif;
-  background: linear-gradient(to bottom, #f0f4f8, #4391d4);
-  color: #333;
+  background: linear-gradient(135deg, #0a174e 0%, #20639b 100%);
+  color: #222e3c;
   margin: 0;
   display: flex;
   animation: gradientShift 15s ease infinite;
@@ -17,27 +17,31 @@ body {
 }
 
 .sidebar {
-  background: #2b2d42;
-  color: #fff;
+  background: #173f5f;
+  color: #f6f6f6;
   width: 250px;
   min-height: 100vh;
   padding: 2rem 1rem;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  box-shadow: 2px 0 10px rgba(32,99,155,0.08);
   position: fixed;
   overflow-y: auto;
   top: 0;
   left: 0;
+  transition: transform 0.3s ease-in-out;
 }
 
 .sidebar h1 {
   font-size: 1.5rem;
   text-align: center;
+  color: #20639b;
+  letter-spacing: 1px;
 }
 
 .sidebar p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-align: center;
   margin-bottom: 1rem;
+  color: #b3c2d6;
 }
 
 .sidebar nav ul {
@@ -51,15 +55,17 @@ body {
 }
 
 .sidebar nav ul li a {
-  color: #edf2f4;
+  color: #f6f6f6;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
-
+  border-radius: 6px;
+  padding: 6px 12px;
 }
 
 .sidebar nav ul li a:hover {
-  color: #ef233c;
+  color: #63ace5;
+  background: #11294d;
 }
 
 .profile-pic {
@@ -67,7 +73,8 @@ body {
   border-radius: 50%;
   display: block;
   margin: 0 auto 1rem;
-  border: 3px solid #fff;
+  border: 3px solid #20639b;
+  box-shadow: 0 2px 8px rgba(32,99,155,0.12);
 }
 
 .profile-pic:hover {
@@ -90,75 +97,74 @@ body {
 main.content {
   flex: 1;
   margin-left: 250px; /* Sidebar width */
-  padding: 1rem;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-
-  /* Background image */
-  background-image: url('sajan_portfolio_background_image1.png'); /* Replace with your image filename */
-  background-size: cover; /* Scale to fill screen */
-  background-position: center; /* Center image */
-  background-attachment: fixed; /* Optional: parallax effect */
-  background-repeat: no-repeat;
+  gap: 0.5rem;
+  background: linear-gradient(120deg, #f6f6f6 0%, #e3eafc 100%);
+  /* background-image removed */
 }
 
 section {
-  background: #fff;
+  background: #ffffff;
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(32,99,155,0.07);
 }
 
 section h2 {
-  color: #2b2d42;
+  color: #20639b;
   margin-top: 0;
 }
 
 .card {
-  background: white;
+  background: #f8fbff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(32,99,155,0.10);
+  margin: 8px 0;
   padding: 20px;
-  width: auto; /* Responsive width */
-  max-width: 80%; /* Optional max width */
+  width: auto;
+  max-width: 80%;
   flex: 0 1 auto;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 5px solid #20639b;
 }
 
 /* Hover Effect */
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 18px rgba(32,99,155,0.18);
+  background: #e3eafc;
 }
 
 .project-card {
-  background: #f8f9fa;
+  background: #e3eafc;
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(32,99,155,0.07);
   transition: background 0.2s ease;
 }
 
 .project-card:hover {
-  background: #eef2f7;
+  background: #f8fbff;
 }
 
 .project-card h3 {
   margin-top: 0;
+  color: #173f5f;
 }
 
 a {
-  color: #ef233c;
+  color: #20639b;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #63ace5;
 }
 
 /* Hamburger Button */
@@ -167,7 +173,7 @@ a:hover {
   position: fixed;
   top: 15px;
   left: 15px;
-  background: #2b2d42;
+  background: #20639b;
   color: white;
   border: none;
   font-size: 24px;
@@ -175,21 +181,6 @@ a:hover {
   border-radius: 8px;
   cursor: pointer;
   z-index: 1000;
-}
-
-/* Sidebar - default desktop */
-.sidebar {
-  background: #2b2d42;
-  color: #fff;
-  width: 250px;
-  min-height: 100vh;
-  padding: 2rem 1rem;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-  position: fixed;
-  overflow-y: auto;
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
 }
 
 html {
