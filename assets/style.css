@@ -33,7 +33,7 @@ body {
 .sidebar h1 {
   font-size: 1.5rem;
   text-align: center;
-  color: #20639b;
+  color: #ffffff;
   letter-spacing: 1px;
 }
 
@@ -185,6 +185,25 @@ a:hover {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Add to your style.css */
+.content-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight {
+  position: absolute;
+  pointer-events: none;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #63ace5 0%, #e3eafc 80%, transparent 100%);
+  mix-blend-mode: lighten;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  z-index: 2;
 }
 
 /* Mobile - hide sidebar by default */
