@@ -2,7 +2,7 @@ body {
   /* font-family: "Segoe UI", Roboto, sans-serif;
    */
   font-family: Inter, Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #0a174e 0%, #20639b 100%);
+  background: #4B9CD3;
   color: #222e3c;
   margin: 0;
   display: flex;
@@ -81,19 +81,6 @@ body {
   transform: scale(1.05);
 }
 
-/* main {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-} */
-
-/* main.content {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  margin-left: 270px;
-} */
-
 main.content {
   flex: 1;
   margin-left: 250px; /* Sidebar width */
@@ -130,6 +117,8 @@ section h2 {
   flex: 0 1 auto;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border-left: 5px solid #20639b;
+  position: relative;
+  z-index: 3;
 }
 
 /* Hover Effect */
@@ -199,7 +188,7 @@ html {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background: radial-gradient(circle, #63ace5 0%, #e3eafc 80%, transparent 100%);
+  background: radial-gradient(circle, #ffffff 0%, #6bf3fd 80%, transparent 100%);
   mix-blend-mode: lighten;
   opacity: 0.7;
   transition: opacity 0.2s;
