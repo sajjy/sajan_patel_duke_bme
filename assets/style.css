@@ -89,8 +89,7 @@ main.content {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(120deg, #f6f6f6 0%, #e3eafc 100%);
-  /* background-image removed */
+  background: #4B9CD3;
 }
 
 section {
