@@ -10,7 +10,7 @@ body {
    */
   font-family: Inter, Arial, Helvetica, sans-serif;
   background: #4B9CD3;
-  color: #222e3c;
+  color: #222e3c;l
   margin: 0;
   display: flex;
   animation: gradientShift 15s ease infinite;
