@@ -1,3 +1,8 @@
+:root {
+  --accent-1: #00ddff;
+}
+
+
 /* Reset + base */
 body, html {
   margin: 0;
@@ -24,7 +29,7 @@ body, html {
 
 .left {
   left: 0;
-  background: #444; /* Grey */
+  background: #343442 /* Grey */
 }
 
 .right {
@@ -61,6 +66,24 @@ body, html {
   font-size: 1.2rem;
 }
 
+/* Profile Picture in Hero Card */
+.hero-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-1);
+  display: block;
+  margin: 0 auto 1rem auto;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-pic:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(35, 178, 239, 0.6);
+}
+
+
 .btn {
   display: inline-block;
   margin-top: 1rem;
@@ -93,10 +116,72 @@ body, html {
 }
 
 .project-card {
-  background: rgba(255,255,255,0.1);
-  border-radius: 8px;
-  padding: 1rem;
-  margin: 1rem auto;
-  max-width: 600px;
-  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4rem 0;
+  gap: 2rem;
+}
+
+.project-card .project-text {
+  flex: 1;
+  color: #eaeaea;
+}
+
+.project-card .project-image {
+  flex: 1;
+}
+
+.project-card img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Alternate layout */
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .project-card, .project-card.reverse {
+    flex-direction: column;
+  }
+
+  .project-card img {
+    max-width: 100%;
+  }
+}
+
+.tech-tags {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #222;
+  color: #fff;
+  border: 1px solid var(--accent-1);
+  border-radius: 20px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tag img {
+  width: 18px;
+  height: 18px;
+}
+
+.tag:hover {
+  background-color: var(--accent-1);
+  transform: translateY(-2px);
 }

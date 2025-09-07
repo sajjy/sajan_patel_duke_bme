@@ -14,24 +14,53 @@
 
     <!-- Hero Card -->
     <div class="hero-card" id="hero-card">
+      <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Profile Picture" class="hero-pic">
       <h1>{{ site.title }}</h1>
       <p>Biomedical Engineer • Neural Engineering • Computational Biology</p>
       <a href="#projects" class="btn">My Projects</a>
     </div>
+
   </section>
 
   <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
+
     <div class="project-card">
-      <h3>Project 1</h3>
-      <p>Description of your project...</p>
+      <div class="project-text">
+        <h3>Project Title</h3>
+        <p>Project description</p>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/javascript.svg' | relative_url }}" alt="JavaScript">
+            JavaScript
+          </span>
+        </div>
+
+        <a href="#">Poster/images →</a>
+        <a href="#">Code →</a>
+      </div>
+      <div class="project-image">
+        <img src="{{ '/assets/project1.jpg' | relative_url }}" alt="Project1_image">
+      </div>
     </div>
-    <div class="project-card">
-      <h3>Project 2</h3>
-      <p>Description of your project...</p>
+
+    <div class="project-card reverse">
+      <div class="project-text">
+        <h3>Project Title</h3>
+        <p>Project description</p>
+        <a href="#">Read More →</a>
+      </div>
+      <div class="project-image">
+        <img src="{{ '/assets/project2.jpg' | relative_url }}" alt="Project2_image">
+      </div>
     </div>
   </section>
+
 
   <script>
     // Slide-in effect on load
