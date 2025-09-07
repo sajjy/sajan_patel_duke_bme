@@ -93,12 +93,14 @@ body, html {
 
 /* Profile Picture in Hero Card */
 .profile-pic {
-  width: 160px;
-  height: 160px;
+  width: 100%;
+  max-width: 160px;   /* don’t let it grow too big */
+  height: auto;       /* keep aspect ratio */
   border-radius: 50%;
   border: 4px solid #ef233c;
   object-fit: cover;
 }
+
 
 .hero-pic:hover {
   transform: scale(1.08);
@@ -165,17 +167,6 @@ body, html {
   flex-direction: row-reverse;
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .project-card, .project-card.reverse {
-    flex-direction: column;
-  }
-
-  .project-card img {
-    max-width: 100%;
-  }
-}
-
 .tech-tags {
   margin: 1rem 0;
   display: flex;
@@ -239,5 +230,17 @@ html {
 
   .tech-tags {
     justify-content: center;
+  }
+
+  .profile-pic {
+    max-width: 120px;
+  }
+
+  .project-card, .project-card.reverse {
+    flex-direction: column;
+  }
+
+  .project-card img {
+    max-width: 100%;
   }
 }
