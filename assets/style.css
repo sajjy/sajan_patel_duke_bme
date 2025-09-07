@@ -61,15 +61,32 @@ body, html {
   transform: translate(-50%, -50%); /* perfectly centered */
 }
 
+/* Hero Card Animation States */
 .hero-card {
   opacity: 0;
   transform: translate(-150%, -50%);
-  transition: opacity 0.5s, transform 1s;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: 
+    opacity 0.5s, 
+    transform 1s, 
+    background 0.7s, 
+    border-color 0.7s;
 }
 
+/* Fully transparent before sliding in */
+.hero-card.pre-slide {
+  opacity: 0;
+  background: transparent;
+  border-color: transparent;
+}
+
+/* Slide in and fade in */
 .hero-card.slide-in {
   opacity: 1;
   transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255,255,255,0.2);
 }
 
 .hero-card .hero-left {

@@ -84,9 +84,10 @@
   const heroLeft = heroCard.querySelector(".hero-left");
   const heroRight = heroCard.querySelector(".hero-right");
   const animatedTitle = document.getElementById("animated-title");
-  const siteTitle = "I'm Sajan Patel";
+  const siteTitle = "I'm Sajan Patel.";
 
-  // Always animate on reload
+  // 1. Set initial state
+  heroCard.classList.add("pre-slide");
   heroCard.classList.remove("slide-in", "profile-in", "final");
   animatedTitle.innerHTML = "";
   for (let i = 0; i < siteTitle.length; i++) {
@@ -95,27 +96,40 @@
     if (siteTitle[i] === " ") span.style.whiteSpace = "pre";
     animatedTitle.appendChild(span);
   }
-  let idx = 0;
-  function showNextLetter() {
-    if (idx < animatedTitle.children.length) {
-      animatedTitle.children[idx].classList.add("visible");
-      idx++;
-      setTimeout(showNextLetter, 60);
-    } else {
-      // 2. Slide in profile pic
-      setTimeout(() => {
-        heroCard.classList.add("profile-in");
-        // 3. Fade in rest of card
-        setTimeout(() => {
-          heroCard.classList.add("final");
-        }, 400);
-      }, 350);
-    }
-  }
+
+  // 2. Slide in card after a short delay
   setTimeout(() => {
+    heroCard.classList.remove("pre-slide");
     heroCard.classList.add("slide-in");
-    showNextLetter();
-  }, 300);
+  }, 200);
+
+  // 3. After slide-in transition, animate letters
+  heroCard.addEventListener("transitionend", function handler(e) {
+    if (e.propertyName === "transform" && heroCard.classList.contains("slide-in")) {
+      // Remove this handler so it only runs once
+      heroCard.removeEventListener("transitionend", handler);
+
+      // Animate name letters
+      let idx = 0;
+      function showNextLetter() {
+        if (idx < animatedTitle.children.length) {
+          animatedTitle.children[idx].classList.add("visible");
+          idx++;
+          setTimeout(showNextLetter, 60);
+        } else {
+          // 2. Slide in profile pic
+          setTimeout(() => {
+            heroCard.classList.add("profile-in");
+            // 3. Fade in rest of card
+            setTimeout(() => {
+              heroCard.classList.add("final");
+            }, 400);
+          }, 350);
+        }
+      }
+      showNextLetter();
+    }
+  });
 });
   </script>
 </body>
