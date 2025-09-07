@@ -1,16 +1,14 @@
 :root {
-  --color-1: #320A6B;
-  --color-2: #065084;
-  --color-3: #0F828C;
-  --color-4: #78B9B5;
+  --color-1: #14213d;   /* Deep navy (backgrounds) */
+  --color-2: #20639b;   /* Duke blue (accents, links) */
+  --color-3: #63ace5;   /* Lighter blue (spotlight, highlights) */
+  --color-4: #212d40;   /* Dark slate (sidebar, cards) */
 }
 
 body {
-  /* font-family: "Segoe UI", Roboto, sans-serif;
-   */
   font-family: Inter, Arial, Helvetica, sans-serif;
-  background: #4B9CD3;
-  color: #222e3c;l
+  background: linear-gradient(135deg, var(--color-1) 0%, var(--color-4) 100%);
+  color: #f6f6f6;
   margin: 0;
   display: flex;
   animation: gradientShift 15s ease infinite;
@@ -96,7 +94,7 @@ main.content {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-1);
+  background: transparent;
 }
 
 section {
