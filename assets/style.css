@@ -1,5 +1,7 @@
 :root {
   --accent-1: #00ddff;
+  --bkgrd-light: #36363b;
+  --bkgrd-dark: #000000;
 }
 
 
@@ -29,13 +31,13 @@ body, html {
 .left {
   left: 0;
   width: 40%;
-  background: #343442 /* Grey */
+  background: var(--bkgrd-light);
 }
 
 .right {
   right: 0;
   width: 60%;
-  background: #000; /* Black */
+  background: var(--bkgrd-dark); /* Black */
 }
 
 /* Hero Card */
@@ -139,8 +141,8 @@ body, html {
 
 /* Profile Picture in Hero Card */
 .hero-pic {
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: 4px solid var(--accent-1);
   object-fit: cover;
@@ -296,4 +298,32 @@ html {
 
 .animated-title span.visible {
   opacity: 1;
+}
+
+.animated-title {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Hide everything in hero-card except .animated-title during pre-slide and slide-in */
+.hero-card.pre-slide,
+.hero-card.slide-in {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.hero-card.pre-slide .hero-left,
+.hero-card.pre-slide .hero-right > *:not(.animated-title),
+.hero-card.slide-in .hero-left,
+.hero-card.slide-in .hero-right > *:not(.animated-title) {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Only show .animated-title during slide-in */
+.hero-card.pre-slide .animated-title,
+.hero-card.slide-in .animated-title {
+  opacity: 1 !important;
+  position: relative;
+  z-index: 2;
 }
