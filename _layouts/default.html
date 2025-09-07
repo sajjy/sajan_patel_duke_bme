@@ -85,51 +85,37 @@
   const heroRight = heroCard.querySelector(".hero-right");
   const animatedTitle = document.getElementById("animated-title");
   const siteTitle = "I'm Sajan Patel";
-  let hasAnimated = sessionStorage.getItem("heroAnimated");
 
-  // Only animate the first time
-  if (!hasAnimated) {
-    // 1. Slide in card and animate name
-    setTimeout(() => {
-      heroCard.classList.add("slide-in");
-      // Animate name letters
-      animatedTitle.innerHTML = "";
-      for (let i = 0; i < siteTitle.length; i++) {
-        const span = document.createElement("span");
-        span.textContent = siteTitle[i];
-        animatedTitle.appendChild(span);
-      }
-      let idx = 0;
-      function showNextLetter() {
-        if (idx < animatedTitle.children.length) {
-          animatedTitle.children[idx].classList.add("visible");
-          idx++;
-          setTimeout(showNextLetter, 60); // speed of letter appearance
-        } else {
-          // 2. Slide in profile pic
-          setTimeout(() => {
-            heroCard.classList.add("profile-in");
-            // 3. Fade in rest of card
-            setTimeout(() => {
-              heroCard.classList.add("final");
-              sessionStorage.setItem("heroAnimated", "1");
-            }, 400);
-          }, 350);
-        }
-      }
-      showNextLetter();
-    }, 300);
-  } else {
-    // If already animated, show everything immediately
-    heroCard.classList.add("slide-in", "profile-in", "final");
-    animatedTitle.innerHTML = "";
-    for (let i = 0; i < siteTitle.length; i++) {
-      const span = document.createElement("span");
-      span.textContent = siteTitle[i];
-      span.classList.add("visible");
-      animatedTitle.appendChild(span);
+  // Always animate on reload
+  heroCard.classList.remove("slide-in", "profile-in", "final");
+  animatedTitle.innerHTML = "";
+  for (let i = 0; i < siteTitle.length; i++) {
+    const span = document.createElement("span");
+    span.textContent = siteTitle[i];
+    if (siteTitle[i] === " ") span.style.whiteSpace = "pre";
+    animatedTitle.appendChild(span);
+  }
+  let idx = 0;
+  function showNextLetter() {
+    if (idx < animatedTitle.children.length) {
+      animatedTitle.children[idx].classList.add("visible");
+      idx++;
+      setTimeout(showNextLetter, 60);
+    } else {
+      // 2. Slide in profile pic
+      setTimeout(() => {
+        heroCard.classList.add("profile-in");
+        // 3. Fade in rest of card
+        setTimeout(() => {
+          heroCard.classList.add("final");
+        }, 400);
+      }, 350);
     }
   }
+  setTimeout(() => {
+    heroCard.classList.add("slide-in");
+    showNextLetter();
+  }, 300);
 });
   </script>
 </body>
