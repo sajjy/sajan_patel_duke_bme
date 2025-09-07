@@ -3,133 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title | default: site.title }}</title>
+  <title>{{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
+  <!-- Split background -->
+  <div class="split left"></div>
+  <div class="split right"></div>
 
-  <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
-  
-  <aside class="sidebar">
-    <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Profile Picture" class="profile-pic">
+  <!-- Hero Card -->
+  <div class="hero-card" id="hero-card">
     <h1>{{ site.title }}</h1>
-    <p>{{ site.description }}</p>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </aside>
+    <p>Biomedical Engineer • Neural Engineering • Computational Biology</p>
+    <a href="#projects" class="btn">My Projects</a>
+  </div>
 
-  <main class="content">
-    <section id="about" class="card">
-      <h2>About Me</h2>
-      <p>I'm a biomedical engineer passionate about developing medical devices
-        and Neural Engineering solutions that restore movement and transform lives.
-        My background spans rehabilitation science, neural/biological research, and computer science.
-        Guided by curiosity and creativity, I integrate research, engineering,
-        and wellness-focused innovation to advance healthcare technology.
-
-      </p>
-    </section>
-
-    <section id="education" class="card">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Duke University</strong> - M.S. in Biomedical Engineering (Neural Engineering)</li>
-        <li><strong>UNC Chapel Hill</strong> - B.S. in Neuroscience and Computer Science</li>
-      </ul>
-    </section>
-
-    <section id="skills" class="card">
-      <h2>Skills</h2>
-      <ul>
-        <li>Programming: Python, Java, C++</li>
-        <li>Data Science: Machine Learning, Neural Signal Analysis, Graph Neural Networks</li>
-        <li>Tools: Git, OpenSCAD, MATLAB</li>
-      </ul>
-    </section>
-
-    <section id="projects" class="card">
-      <h2>Projects</h2>
-
-      <div class="project-card">
-        <h3>Neural Spike Sorting</h3>
-        <p>Developed a pipeline for detecting and classifying neural spikes using Python.</p>
-        <a href="https://github.com/username/spike-sorting" target="_blank">View on GitHub</a>
-        <img src="assets/spike_sorting.gif" alt="Spike Sorting Demo" />
-      </div>
-
-      <div class="project-card">
-        <h3>Bio-Signal Processing</h3>
-        <p>Implemented real-time EEG signal processing with visualization.</p>
-        <a href="https://github.com/username/biosignal-processing" target="_blank">View on GitHub</a>
-        <img src="assets/eeg_demo.png" alt="EEG Demo" />
-      </div>
-    </section>
-
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <ul>
-        <li><a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/username" target="_blank">GitHub</a></li>
-        <li>Email: youremail@example.com</li>
-      </ul>
-    </section>
-  </main>
-
-  <!-- <footer>
-    <p>© {{ site.time | date: "%Y" }} {{ site.title }}</p>
-  </footer> -->
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Project 1</h3>
+      <p>Description of your project...</p>
+    </div>
+    <div class="project-card">
+      <h3>Project 2</h3>
+      <p>Description of your project...</p>
+    </div>
+  </section>
 
   <script>
-    const sidebar = document.querySelector(".sidebar");
-    const toggleBtn = document.querySelector(".menu-toggle");
-
-    toggleBtn.addEventListener("click", () => {
-      sidebar.classList.toggle("open");
+    // Slide-in effect on load
+    window.addEventListener("load", () => {
+      document.getElementById("hero-card").classList.add("show");
     });
-
-    // Close sidebar when a nav link is clicked (mobile)
-    document.querySelectorAll(".sidebar nav ul li a").forEach(link => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
-          sidebar.classList.remove("open");
-        }
-      });
-    });
-
-    // Cursor spotlight effect for .content
-    const content = document.querySelector('.content');
-    content.classList.add('content-spotlight');
-
-    const spotlight = document.createElement('div');
-    spotlight.className = 'spotlight';
-    spotlight.style.opacity = '0';
-    content.appendChild(spotlight);
-
-    content.addEventListener('mousemove', (e) => {
-      const rect = content.getBoundingClientRect();
-      spotlight.style.left = (e.clientX - rect.left - 90) + 'px';
-      spotlight.style.top = (e.clientY - rect.top - 90) + 'px';
-      spotlight.style.opacity = '0.7';
-    });
-
-    content.addEventListener('mouseleave', () => {
-      spotlight.style.opacity = '0';
-    });
-
   </script>
-
-
 </body>
 </html>
