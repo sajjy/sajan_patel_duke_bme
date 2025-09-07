@@ -42,18 +42,19 @@ body, html {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-150%, -50%);
+  transform: translate(-150%, -50%); /* start off-screen */
   background: rgba(0, 0, 0, 0.6);
   border: 2px solid rgba(255,255,255,0.2);
   border-radius: 12px;
   padding: 2rem;
   max-width: 800px;
   width: 90%;
-  display: flex;               /* side-by-side layout */
+  display: flex;
   align-items: center;
   gap: 2rem;
-  transition: transform 1s ease;
-}}
+
+  transition: transform 1s ease; /* 👈 ensure transform animates */
+}
 
 .hero-card.show {
   transform: translate(-50%, -50%); /* perfectly centered */
