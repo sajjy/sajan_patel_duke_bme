@@ -45,7 +45,7 @@ body, html {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-150%, -50%); /* start off-screen */
+  transform: translate(-50%, -50%); /* start off-screen */
   background: rgba(0, 0, 0, 0.6);
   border: 2px solid rgba(255,255,255,0.2);
   border-radius: 12px;
@@ -55,8 +55,11 @@ body, html {
   display: flex;
   align-items: center;
   gap: 2rem;
-
-  transition: transform 1s ease; /* 👈 ensure transform animates */
+  opacity: 0;
+  transition: 
+    opacity 0.5s,
+    background 0.7s,
+    border-color 0.7s;
 }
 
 .hero-card.show {
@@ -83,6 +86,13 @@ body, html {
   border-color: transparent;
 }
 
+/* Show only the animated title */
+.hero-card.show-title {
+  opacity: 1;
+  background: transparent;
+  border-color: transparent;
+}
+
 /* Slide in and fade in */
 .hero-card.slide-in {
   opacity: 1;
@@ -100,6 +110,7 @@ body, html {
 .hero-card.profile-in .hero-left {
   opacity: 1;
   transform: translateX(0);
+  transition: opacity 0.5s, transform 0.7s;
 }
 
 .hero-card .hero-right > *:not(:first-child) {
@@ -117,6 +128,7 @@ body, html {
 
 .hero-card.final {
   background: rgba(0,0,0,0.85);
+  border-color: rgba(255,255,255,0.2);
 }
 
 .hero-left {

@@ -123,7 +123,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // 1. Set initial state
   heroCard.classList.add("pre-slide");
-  heroCard.classList.remove("slide-in", "profile-in", "final");
+  heroCard.classList.remove("show-title", "profile-in", "final");
   animatedTitle.innerHTML = "";
   for (let i = 0; i < siteTitle.length; i++) {
     const span = document.createElement("span");
@@ -132,39 +132,30 @@ window.addEventListener("DOMContentLoaded", () => {
     animatedTitle.appendChild(span);
   }
 
-  // 2. Slide in card after a short delay
+  // 2. Fade in card (still transparent, only title visible)
   setTimeout(() => {
     heroCard.classList.remove("pre-slide");
-    heroCard.classList.add("slide-in");
-  }, 200);
-
-  // 3. After slide-in transition, animate letters
-  heroCard.addEventListener("transitionend", function handler(e) {
-    if (e.propertyName === "transform" && heroCard.classList.contains("slide-in")) {
-      heroCard.removeEventListener("transitionend", handler);
-
-      // Animate name letters
-      let idx = 0;
-      function showNextLetter() {
-        if (idx < animatedTitle.children.length) {
-          animatedTitle.children[idx].classList.add("visible");
-          idx++;
-          setTimeout(showNextLetter, 60);
-        } else {
-          // 2. Slide in profile pic
+    heroCard.classList.add("show-title");
+    // 3. Animate name letters
+    let idx = 0;
+    function showNextLetter() {
+      if (idx < animatedTitle.children.length) {
+        animatedTitle.children[idx].classList.add("visible");
+        idx++;
+        setTimeout(showNextLetter, 60);
+      } else {
+        // 4. Slide in profile pic
+        setTimeout(() => {
+          heroCard.classList.add("profile-in");
+          // 5. Fade in rest of card and background
           setTimeout(() => {
-            heroCard.classList.remove("slide-in"); // Remove slide-in to allow next states
-            heroCard.classList.add("profile-in");
-            // 3. Fade in rest of card
-            setTimeout(() => {
-              heroCard.classList.add("final");
-            }, 400);
-          }, 350);
-        }
+            heroCard.classList.add("final");
+          }, 400);
+        }, 350);
       }
-      showNextLetter();
     }
-  });
+    showNextLetter();
+  }, 200);
 });
   </script>
 </body>
