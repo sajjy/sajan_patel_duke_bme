@@ -71,7 +71,7 @@ body, html {
   border: 2px solid rgba(255,255,255,0.2);
   transition: 
     opacity 0.5s, 
-    transform 1s, 
+    transform 0.1s,   /* <-- make slide-in fast */
     background 0.7s, 
     border-color 0.7s;
 }

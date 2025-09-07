@@ -114,7 +114,7 @@
   </section>
 
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
   const heroCard = document.getElementById("hero-card");
   const heroLeft = heroCard.querySelector(".hero-left");
   const heroRight = heroCard.querySelector(".hero-right");
@@ -141,7 +141,6 @@
   // 3. After slide-in transition, animate letters
   heroCard.addEventListener("transitionend", function handler(e) {
     if (e.propertyName === "transform" && heroCard.classList.contains("slide-in")) {
-      // Remove this handler so it only runs once
       heroCard.removeEventListener("transitionend", handler);
 
       // Animate name letters
@@ -154,6 +153,7 @@
         } else {
           // 2. Slide in profile pic
           setTimeout(() => {
+            heroCard.classList.remove("slide-in"); // Remove slide-in to allow next states
             heroCard.classList.add("profile-in");
             // 3. Fade in rest of card
             setTimeout(() => {
