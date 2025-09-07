@@ -55,7 +55,7 @@ body, html {
   display: flex;
   align-items: center;
   gap: 2rem;
-  opacity: 0;
+
   transition: 
     opacity 0.5s,
     background 0.7s,
@@ -67,28 +67,9 @@ body, html {
 }
 
 /* Hero Card Animation States */
-.hero-card {
-  opacity: 0;
-  transform: translate(-150%, -50%);
-  background: rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(255,255,255,0.2);
-  transition: 
-    opacity 0.5s, 
-    transform 0.1s,   /* <-- make slide-in fast */
-    background 0.7s, 
-    border-color 0.7s;
-}
-
 /* Fully transparent before sliding in */
 .hero-card.pre-slide {
   opacity: 0;
-  background: transparent;
-  border-color: transparent;
-}
-
-/* Show only the animated title */
-.hero-card.show-title {
-  opacity: 1;
   background: transparent;
   border-color: transparent;
 }
@@ -110,7 +91,6 @@ body, html {
 .hero-card.profile-in .hero-left {
   opacity: 1;
   transform: translateX(0);
-  transition: opacity 0.5s, transform 0.7s;
 }
 
 .hero-card .hero-right > *:not(:first-child) {
@@ -128,7 +108,6 @@ body, html {
 
 .hero-card.final {
   background: rgba(0,0,0,0.85);
-  border-color: rgba(255,255,255,0.2);
 }
 
 .hero-left {
