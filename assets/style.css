@@ -57,9 +57,9 @@ body, html {
   gap: 2rem;
 
   transition: 
-    opacity 0.5s,
-    background 0.7s,
-    border-color 0.7s;
+    opacity 3.0s,
+    background 3.0s,
+    border-color 3.0s;
 }
 
 .hero-card.show {
