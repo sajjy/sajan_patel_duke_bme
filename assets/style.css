@@ -22,18 +22,19 @@ body, html {
 .split {
   position: absolute;
   top: 0;
-  width: 50%;
   height: 100%;
   z-index: -1;
 }
 
 .left {
   left: 0;
+  width: 40%;
   background: #343442 /* Grey */
 }
 
 .right {
   right: 0;
+  width: 60%;
   background: #000; /* Black */
 }
 
@@ -58,6 +59,45 @@ body, html {
 
 .hero-card.show {
   transform: translate(-50%, -50%); /* perfectly centered */
+}
+
+.hero-card {
+  opacity: 0;
+  transform: translate(-150%, -50%);
+  transition: opacity 0.5s, transform 1s;
+}
+
+.hero-card.slide-in {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.hero-card .hero-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.5s, transform 0.7s;
+}
+
+.hero-card.profile-in .hero-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-card .hero-right > *:not(:first-child) {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.hero-card.final .hero-right > *:not(:first-child) {
+  opacity: 1;
+}
+
+.hero-card {
+  transition: background 0.7s, opacity 0.5s, transform 1s;
+}
+
+.hero-card.final {
+  background: rgba(0,0,0,0.85);
 }
 
 .hero-left {
@@ -228,4 +268,15 @@ html {
 .tag:hover {
   background-color: var(--accent-1);
   transform: translateY(-2px);
+}
+
+/* Animated name */
+.animated-title span {
+  opacity: 0;
+  display: inline-block;
+  transition: opacity 0.15s;
+}
+
+.animated-title span.visible {
+  opacity: 1;
 }

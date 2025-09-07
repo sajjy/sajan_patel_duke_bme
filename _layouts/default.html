@@ -18,7 +18,7 @@
         <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Profile Picture" class="hero-pic">
       </div>
       <div class="hero-right">
-        <h1>{{ site.title }}</h1>
+        <h1 class="animated-title" id="animated-title"></h1>
         <p>Biomedical Engineer • Neural Engineering • Computational Biology</p>
 
         <!-- Tech Tags -->
@@ -79,10 +79,58 @@
 
 
   <script>
-    // Slide-in effect on load
-    window.addEventListener("load", () => {
-      document.getElementById("hero-card").classList.add("show");
-    });
+    window.addEventListener("DOMContentLoaded", () => {
+  const heroCard = document.getElementById("hero-card");
+  const heroLeft = heroCard.querySelector(".hero-left");
+  const heroRight = heroCard.querySelector(".hero-right");
+  const animatedTitle = document.getElementById("animated-title");
+  const siteTitle = "I'm Sajan Patel";
+  let hasAnimated = sessionStorage.getItem("heroAnimated");
+
+  // Only animate the first time
+  if (!hasAnimated) {
+    // 1. Slide in card and animate name
+    setTimeout(() => {
+      heroCard.classList.add("slide-in");
+      // Animate name letters
+      animatedTitle.innerHTML = "";
+      for (let i = 0; i < siteTitle.length; i++) {
+        const span = document.createElement("span");
+        span.textContent = siteTitle[i];
+        animatedTitle.appendChild(span);
+      }
+      let idx = 0;
+      function showNextLetter() {
+        if (idx < animatedTitle.children.length) {
+          animatedTitle.children[idx].classList.add("visible");
+          idx++;
+          setTimeout(showNextLetter, 60); // speed of letter appearance
+        } else {
+          // 2. Slide in profile pic
+          setTimeout(() => {
+            heroCard.classList.add("profile-in");
+            // 3. Fade in rest of card
+            setTimeout(() => {
+              heroCard.classList.add("final");
+              sessionStorage.setItem("heroAnimated", "1");
+            }, 400);
+          }, 350);
+        }
+      }
+      showNextLetter();
+    }, 300);
+  } else {
+    // If already animated, show everything immediately
+    heroCard.classList.add("slide-in", "profile-in", "final");
+    animatedTitle.innerHTML = "";
+    for (let i = 0; i < siteTitle.length; i++) {
+      const span = document.createElement("span");
+      span.textContent = siteTitle[i];
+      span.classList.add("visible");
+      animatedTitle.appendChild(span);
+    }
+  }
+});
   </script>
 </body>
 </html>
