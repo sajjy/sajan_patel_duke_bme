@@ -1,6 +1,4 @@
 :root {
-  --bkgrd-light: #181823;
-  --bkgrd-dark: #000000;
   --accent-1: #00ddff;
 }
 
@@ -15,13 +13,10 @@ body, html {
 }
 
 /* Hero section with split background */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to right, #555 50%, #000 50%);
-  color: white;
+#hero {
+  position: relative;
+  height: 100vh; /* full screen */
+  overflow: hidden;
 }
 
 .split {
@@ -34,26 +29,34 @@ body, html {
 
 .left {
   left: 0;
-  background: var(--bkgrd-light);
+  background: #343442 /* Grey */
 }
 
 .right {
   right: 0;
-  background: var(--bkgrd-dark);
+  background: #000; /* Black */
 }
 
 /* Hero Card */
 .hero-card {
-  display: flex;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 16px;
-  padding: 2rem 3rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 2rem;
   max-width: 800px;
-  animation: slideIn 1s ease-out;
-  position: fixed;
-  top: 10%;
+  width: 90%;
+  display: flex;               /* side-by-side layout */
+  align-items: center;
+  gap: 2rem;
+  transition: transform 1s ease;
+}}
+
+.hero-card.show {
+  transform: translate(-50%, -50%); /* perfectly centered */
 }
 
 .hero-left {
@@ -64,21 +67,6 @@ body, html {
 
 .hero-right {
   flex: 2;
-  padding-left: 2rem;
-}
-
-.hero-right h1 {
-  font-size: 2.5rem;
-  margin: 0 0 0.5rem;
-}
-
-.hero-right p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.hero-card.show {
-  transform: translate(-50%, -50%); /* perfectly centered */
 }
 
 .hero-card h1 {
@@ -92,37 +80,41 @@ body, html {
 }
 
 /* Profile Picture in Hero Card */
-.profile-pic {
-  width: 100%;
-  max-width: 160px;   /* don’t let it grow too big */
-  height: auto;       /* keep aspect ratio */
+.hero-pic {
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  border: 4px solid #ef233c;
+  border: 4px solid var(--accent-1);
   object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .hero-pic:hover {
   transform: scale(1.08);
   box-shadow: 0 0 15px rgba(35, 178, 239, 0.6);
 }
 
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
 
 .btn {
   display: inline-block;
-  background: #ef233c;
-  color: white;
+  margin-top: 1rem;
   padding: 0.75rem 1.5rem;
+  border: 2px solid white;
   border-radius: 8px;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-  background: #d90429;
+  background: white;
+  color: black;
 }
-
 
 /* Projects Section */
 #projects {
@@ -167,6 +159,45 @@ body, html {
   flex-direction: row-reverse;
 }
 
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .project-card, .project-card.reverse {
+    flex-direction: column;
+  }
+
+  .project-card img {
+    max-width: 100%;
+  }
+
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .hero-right {
+    padding: 0;
+  }
+
+  .hero-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-card h1 {
+    font-size: 2rem;
+  }
+
+  .hero-card p {
+    font-size: 1rem;
+  }
+
+  .tech-tags {
+    justify-content: center;
+  }
+  
+}
+
 .tech-tags {
   margin: 1rem 0;
   display: flex;
@@ -196,51 +227,4 @@ body, html {
 .tag:hover {
   background-color: var(--accent-1);
   transform: translateY(-2px);
-}
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* 📱 Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-  .hero-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem;
-    top: 5%; /* move a little higher for small screens */
-  }
-
-  .hero-left {
-    margin-bottom: 1rem;
-  }
-
-  .hero-right {
-    padding-left: 0;
-  }
-
-  .hero-right h1 {
-    font-size: 2rem;
-  }
-
-  .hero-right p {
-    font-size: 1rem;
-  }
-
-  .tech-tags {
-    justify-content: center;
-  }
-
-  .profile-pic {
-    max-width: 120px;
-  }
-
-  .project-card, .project-card.reverse {
-    flex-direction: column;
-  }
-
-  .project-card img {
-    max-width: 100%;
-  }
 }
