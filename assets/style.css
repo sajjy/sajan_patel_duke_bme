@@ -366,9 +366,33 @@ html {
 
 #about-me {
   background: #fff !important;
-  color: #fff !important;
+  color: #000 !important;
 }
 
 #about-me * {
-  color: #fff !important;
+  color: #000 !important;
+}
+
+/* Top Menu */
+.top-menu {
+  position: fixed;
+  top: 32px;
+  right: 48px;
+  z-index: 100;
+  display: flex;
+  gap: 2rem;
+}
+
+.top-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.top-menu a:hover {
+  color: var(--accent-1);
+  text-decoration: underline;
 }
