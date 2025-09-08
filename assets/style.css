@@ -1,6 +1,6 @@
 :root {
   --accent-1: #00ddff;
-  --bkgrd-light: #36363b;
+  --bkgrd-light: rgba(24,24,35,1);
   --bkgrd-dark: #000000;
 }
 
