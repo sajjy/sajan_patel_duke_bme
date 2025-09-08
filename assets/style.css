@@ -149,8 +149,15 @@ html {
 /* Projects Section */
 #projects {
   background: black;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   min-height: 100vh;
+}
+
+#projects h1 {
+  font-size: 3.2rem; /* larger heading */
+  margin-bottom: 2rem;
+  color: white;
+  text-align: left;
 }
 
 #projects h2 {
@@ -175,6 +182,11 @@ html {
 
 .project-card .project-image {
   flex: 1;
+}
+
+.project-image {
+  display: flex;
+  justify-content: center;
 }
 
 .project-card img {
