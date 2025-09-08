@@ -284,7 +284,8 @@ html {
 .hobby-tags {
   margin: 1.5rem 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;   /* Stack vertically */
+  flex-wrap: nowrap;        /* Prevent wrapping */
   gap: 1rem;
 }
 
@@ -350,4 +351,15 @@ html {
   opacity: 1 !important;
   position: relative;
   z-index: 2;
+}
+
+/* About Me section links */
+#about-me a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+#about-me a:hover {
+  color: var(--accent-1);
+  text-decoration: underline;
 }
