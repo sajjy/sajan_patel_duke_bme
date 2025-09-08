@@ -363,3 +363,12 @@ html {
   color: var(--accent-1);
   text-decoration: underline;
 }
+
+#about-me {
+  background: #fff !important;
+  color: #fff !important;
+}
+
+#about-me * {
+  color: #fff !important;
+}
