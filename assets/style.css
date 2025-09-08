@@ -349,11 +349,11 @@ html {
 
 #about-me {
   background: #fff !important;
-  color: #000 !important;
+  color: #000;
 }
 
 #about-me * {
-  color: #000 !important;
+  color: #000;
 }
 
 /* Top Menu */
