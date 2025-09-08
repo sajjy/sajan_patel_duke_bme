@@ -246,6 +246,10 @@ html {
   .tech-tags {
     justify-content: center;
   }
+
+  .top-menu {
+    display: none !important;
+  }
   
 }
 
@@ -293,8 +297,8 @@ html {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  background-color: #222;
-  color: #fff;
+  background-color: #ace5f6a9;
+  color: #000000;
   border: 2px solid var(--accent-1);
   border-radius: 32px;
   padding: 0.7rem 2.2rem;
