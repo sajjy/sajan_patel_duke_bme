@@ -45,9 +45,9 @@ body, html {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* start off-screen */
-  background: rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(255,255,255,0.2);
+  transform: translate(-50%, -50%);
+  background: transparent !important;
+  border: none !important;
   border-radius: 12px;
   padding: 2rem;
   max-width: 800px;
@@ -55,32 +55,10 @@ body, html {
   display: flex;
   align-items: center;
   gap: 2rem;
-
-  transition: 
-    opacity 3.0s,
-    background 3.0s,
-    border-color 3.0s;
-}
-
-.hero-card.show {
-  transform: translate(-50%, -50%); /* perfectly centered */
 }
 
 /* Hero Card Animation States */
-/* Fully transparent before sliding in */
-.hero-card.pre-slide {
-  opacity: 0;
-  background: transparent;
-  border-color: transparent;
-}
 
-/* Slide in and fade in */
-.hero-card.slide-in {
-  opacity: 1;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.6);
-  border-color: rgba(255,255,255,0.2);
-}
 
 .hero-card .hero-left {
   opacity: 0;
@@ -100,15 +78,6 @@ body, html {
 
 .hero-card.final .hero-right > *:not(:first-child) {
   opacity: 1;
-}
-
-.hero-card {
-  transition: background 0.7s, opacity 0.5s, transform 1s;
-}
-
-.hero-card.final {
-  background: transparent !important;
-  border: none !important;
 }
 
 .hero-left {
