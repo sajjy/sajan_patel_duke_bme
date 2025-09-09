@@ -49,12 +49,12 @@ body, html {
   background: transparent !important;
   border: none !important;
   border-radius: 12px;
-  padding: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
   max-width: 800px;
   width: 90%;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1rem, 4vw, 2rem);
 }
 
 /* Hero Card Animation States */
