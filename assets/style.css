@@ -92,11 +92,11 @@ body, html {
 
 .hero-card h1 {
   margin: 0;
-  font-size: 3.2rem;
+  font-size: clamp(2rem, 6vw, 3.2rem);
 }
 
 .hero-card .subtitle {
-  font-size: 2rem;
+  font-size: clamp(1.1rem, 3vw, 2rem);
   font-weight: 500;
   margin-bottom: 1.2rem;
   color: var(--accent-1);
@@ -105,13 +105,13 @@ body, html {
 
 .hero-card p {
   margin: 1.2rem 0;
-  font-size: 1.35rem;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
 }
 
 /* Profile Picture in Hero Card */
 .hero-pic {
-  width: 260px;
-  height: 260px;
+  width: clamp(120px, 28vw, 260px);
+  height: clamp(120px, 28vw, 260px);
   border-radius: 12px;
   border: 4px solid var(--accent-1);
   object-fit: cover;
@@ -131,10 +131,10 @@ html {
 .btn {
   display: inline-block;
   margin-top: 1.5rem;
-  padding: 1.1rem 2.5rem;
   border: 2px solid white;
   border-radius: 10px;
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  padding: clamp(0.7rem, 2vw, 1.1rem) clamp(1.5rem, 5vw, 2.5rem);
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -350,8 +350,8 @@ html {
 
 /* About Me section links */
 #about-me a {
-  color: #fff;
-  text-decoration: underline;
+  color: #000000 !important;
+  text-decoration: underline !important;
 }
 
 #about-me a:hover {
@@ -361,12 +361,22 @@ html {
 
 #about-me {
   background: #fff !important;
-  color: #000;
+  color: #000;  /* text color */
+  padding: 2rem 2rem;
+  min-height: 60vh;
 }
 
 #about-me * {
   color: #000;
 }
+
+#about-me h1 {
+  font-size: 3.2rem; /* larger heading */
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+
 
 /* Top Menu */
 .top-menu {
