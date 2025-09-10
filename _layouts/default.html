@@ -170,7 +170,7 @@
           
       </div>
       <div class="project-image">
-        <img src="{{ '/assets/project-images/ev3-robot/robot-navigating-course.gif' | relative_url }}" alt="Project2_image">
+        <img id="project-2-images" src="{{ '/assets/project-images/ev3-robot/robot-navigating-course.gif' | relative_url }}" alt="Project2_image">
       </div>
     </div>
   </section>
@@ -251,6 +251,21 @@
         img.src = photoList[idx];
       }, 5000);
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const photoList = [
+        "{{ '/assets/project-images/ev3-robot/robot.png' | relative_url }}",
+        "{{ '/assets/project-images/ev3-robot/robot-navigating-course.gif' | relative_url }}",
+      ];
+      let idx = 0;
+      const img = document.getElementById("project-2-images");
+      setInterval(() => {
+        idx = (idx + 1) % photoList.length;
+        img.src = photoList[idx];
+      }, 5000);
+    });
+
+
     </script>
 </body>
 </html>
