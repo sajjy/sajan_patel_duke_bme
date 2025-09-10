@@ -201,6 +201,15 @@ html {
   flex-direction: row-reverse;
 }
 
+#project-1-images {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .project-card, .project-card.reverse {

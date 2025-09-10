@@ -122,24 +122,30 @@
 
     <div class="project-card">
       <div class="project-text">
-        <h3>Project Title</h3>
-        <p>Project description</p>
+        <h3>Full Basic Microprocessor with MIPS Assembly Game</h3>
+        <p>
+          Designed a full basic <strong>microprocessor</strong> in SystemVerilog and implemented it on a 
+          Nexys A7 circuit development platform. Then, developed a complex MIPS assembly game that performs
+          bitwise operations on the microprocessor to dynamically write to audio output, a 7-segment display, 
+          and a VGA monitor based on input from a keyboard and accelerometer.
+        </p>
         <div class="tech-tags">
           <span class="tag">
-            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
-            Python
+            <img src="{{ '/assets/tech-logos/c-programming.svg' | relative_url }}" alt="c-programming">
+            C
           </span>
           <span class="tag">
-            <img src="{{ '/assets/tech-logos/javascript.svg' | relative_url }}" alt="JavaScript">
-            JavaScript
+            <img src="{{ '/assets/tech-logos/assembly.png' | relative_url }}" alt="assembly MIPS">
+            MIPS
+          </span>
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/system-verilog.png' | relative_url }}" alt="SystemVerilog">
+            SystemVerilog
           </span>
         </div>
-
-        <a href="#">Poster/images →</a>
-        <a href="#">Code →</a>
       </div>
       <div class="project-image">
-        <img src="{{ '/assets/project1.jpg' | relative_url }}" alt="Project1_image">
+        <img id="project-1-images" src="{{ '/assets/project-images/microprocessor-mips/killer-candy-preview-gif.gif' | relative_url }}" alt="Project1_image">
       </div>
     </div>
 
@@ -156,65 +162,81 @@
   </section>
 
   <script>
-window.addEventListener("DOMContentLoaded", () => {
-  const heroCard = document.getElementById("hero-card");
-  const heroLeft = heroCard.querySelector(".hero-left");
-  const heroRight = heroCard.querySelector(".hero-right");
-  const animatedTitle = document.getElementById("animated-title");
-  const siteTitle = "I'm Sajan Patel.";
+    window.addEventListener("DOMContentLoaded", () => {
+      const heroCard = document.getElementById("hero-card");
+      const heroLeft = heroCard.querySelector(".hero-left");
+      const heroRight = heroCard.querySelector(".hero-right");
+      const animatedTitle = document.getElementById("animated-title");
+      const siteTitle = "I'm Sajan Patel.";
 
-  // 1. Set initial state
-  heroCard.classList.add("pre-slide");
-  heroCard.classList.remove("show-title", "profile-in", "final");
-  animatedTitle.innerHTML = "";
-  for (let i = 0; i < siteTitle.length; i++) {
-    const span = document.createElement("span");
-    span.textContent = siteTitle[i];
-    if (siteTitle[i] === " ") span.style.whiteSpace = "pre";
-    animatedTitle.appendChild(span);
-  }
-
-  // 2. Fade in card (still transparent, only title visible)
-  setTimeout(() => {
-    heroCard.classList.remove("pre-slide");
-    heroCard.classList.add("show-title");
-    // 3. Animate name letters
-    let idx = 0;
-    function showNextLetter() {
-      if (idx < animatedTitle.children.length) {
-        animatedTitle.children[idx].classList.add("visible");
-        idx++;
-        setTimeout(showNextLetter, 60);
-      } else {
-        // 4. Slide in profile pic
-        setTimeout(() => {
-          heroCard.classList.add("profile-in");
-          // 5. Fade in rest of card and background
-          setTimeout(() => {
-            heroCard.classList.add("final");
-          }, 400);
-        }, 350);
+      // 1. Set initial state
+      heroCard.classList.add("pre-slide");
+      heroCard.classList.remove("show-title", "profile-in", "final");
+      animatedTitle.innerHTML = "";
+      for (let i = 0; i < siteTitle.length; i++) {
+        const span = document.createElement("span");
+        span.textContent = siteTitle[i];
+        if (siteTitle[i] === " ") span.style.whiteSpace = "pre";
+        animatedTitle.appendChild(span);
       }
-    }
-    showNextLetter();
-  }, 200);
 
-  // Hide menu after scrolling past hero
-  const topMenu = document.querySelector('.top-menu');
-  const heroSection = document.getElementById('hero');
+      // 2. Fade in card (still transparent, only title visible)
+      setTimeout(() => {
+        heroCard.classList.remove("pre-slide");
+        heroCard.classList.add("show-title");
+        // 3. Animate name letters
+        let idx = 0;
+        function showNextLetter() {
+          if (idx < animatedTitle.children.length) {
+            animatedTitle.children[idx].classList.add("visible");
+            idx++;
+            setTimeout(showNextLetter, 60);
+          } else {
+            // 4. Slide in profile pic
+            setTimeout(() => {
+              heroCard.classList.add("profile-in");
+              // 5. Fade in rest of card and background
+              setTimeout(() => {
+                heroCard.classList.add("final");
+              }, 400);
+            }, 350);
+          }
+        }
+        showNextLetter();
+      }, 200);
 
-  function handleMenuVisibility() {
-    const heroRect = heroSection.getBoundingClientRect();
-    if (heroRect.bottom <= 0) {
-      topMenu.style.display = 'none';
-    } else {
-      topMenu.style.display = '';
-    }
-  }
+      // Hide menu after scrolling past hero
+      const topMenu = document.querySelector('.top-menu');
+      const heroSection = document.getElementById('hero');
 
-  window.addEventListener('scroll', handleMenuVisibility, { passive: true });
-  handleMenuVisibility();
-});
+      function handleMenuVisibility() {
+        const heroRect = heroSection.getBoundingClientRect();
+        if (heroRect.bottom <= 0) {
+          topMenu.style.display = 'none';
+        } else {
+          topMenu.style.display = '';
+        }
+      }
+
+      window.addEventListener('scroll', handleMenuVisibility, { passive: true });
+      handleMenuVisibility();
+    });
   </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const photoList = [
+        "{{ '/assets/project-images/microprocessor-mips/killer-candy-preview-gif.gif' | relative_url }}",
+        "{{ '/assets/project-images/microprocessor-mips/full-setup.png' | relative_url }}",
+        "{{ '/assets/project-images/microprocessor-mips/microprocessor-diagram.png' | relative_url }}"
+      ];
+      let idx = 0;
+      const img = document.getElementById("project-1-images");
+      setInterval(() => {
+        idx = (idx + 1) % photoList.length;
+        img.src = photoList[idx];
+      }, 5000);
+    });
+    </script>
 </body>
 </html>
