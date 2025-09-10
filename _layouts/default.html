@@ -122,7 +122,7 @@
 
     <div class="project-card">
       <div class="project-text">
-        <h3>Full Basic Microprocessor with MIPS Assembly Game</h3>
+        <h2>Full Basic Microprocessor with MIPS Assembly Game</h2>
         <p>
           Designed a full basic <strong>microprocessor</strong> in SystemVerilog and implemented it on a 
           Nexys A7 circuit development platform. Then, developed a complex MIPS assembly game that performs
@@ -139,7 +139,7 @@
             MIPS
           </span>
           <span class="tag">
-            <img src="{{ '/assets/tech-logos/system-verilog.png' | relative_url }}" alt="SystemVerilog">
+            <img src="{{ '/assets/tech-logos/system-verilog.svg' | relative_url }}" alt="SystemVerilog">
             SystemVerilog
           </span>
         </div>
@@ -151,12 +151,26 @@
 
     <div class="project-card reverse">
       <div class="project-text">
-        <h3>Project Title</h3>
-        <p>Project description</p>
-        <a href="#">Read More →</a>
+        <h2>Python-powered Robot Navigates Obstacle Course</h2>
+        <p>
+          <a href="https://www.linkedin.com/in/jacob-fessler-7b397a22b/">Jacob Fessler</a> and I utilized 
+          a LEGO MINDSTORMS EV3 robot kit to build several prototypes
+          that can navigate through multiple complex environments in order to reach a goal zone. These 
+          robots leverage ultrasonic and bump sensors to detect objects and use a differential drive 
+          wheel configuration for locomotion. They are powered by modular python programs that process
+          sensor input to determine the robot's position and adjust outputs to the wheel motors to
+          avoid obstacles and reach the goal zone.
+        </p>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+        </div>
+          
       </div>
       <div class="project-image">
-        <img src="{{ '/assets/project2.jpg' | relative_url }}" alt="Project2_image">
+        <img src="{{ '/assets/project-images/ev3-robot/robot-navigating-course.gif' | relative_url }}" alt="Project2_image">
       </div>
     </div>
   </section>
@@ -227,7 +241,7 @@
     document.addEventListener("DOMContentLoaded", function() {
       const photoList = [
         "{{ '/assets/project-images/microprocessor-mips/killer-candy-preview-gif.gif' | relative_url }}",
-        "{{ '/assets/project-images/microprocessor-mips/full-setup.png' | relative_url }}",
+        "{{ '/assets/project-images/microprocessor-mips/nexus-board.png' | relative_url }}",
         "{{ '/assets/project-images/microprocessor-mips/microprocessor-diagram.png' | relative_url }}"
       ];
       let idx = 0;

@@ -155,24 +155,34 @@ html {
 
 #projects h1 {
   font-size: 3.2rem; /* larger heading */
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   color: white;
   text-align: left;
 }
 
 #projects h2 {
   font-size: 2.5rem; /* larger heading */
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   color: white;
   text-align: left;
+}
+
+#projects a {
+  color: #FFF !important;
+  text-decoration: underline !important;
+}
+
+#about-me a:hover {
+  color: var(--accent-1);
+  text-decoration: underline;
 }
 
 .project-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 4rem 0;
-  gap: 2rem;
+  margin: 2rem 0;
+  gap: 1rem;
 }
 
 .project-card .project-text {
