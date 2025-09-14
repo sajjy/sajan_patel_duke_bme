@@ -494,3 +494,42 @@ html {
   /* gap: 1rem; */
   margin-bottom: 0.2rem;
 }
+
+.education-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.education-list {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.education-duke-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-duke-img img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  object-fit: cover;
+}
+
+/* Hide the image on small screens */
+@media (max-width: 900px) {
+  .education-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .education-duke-img {
+    display: none;
+  }
+}
