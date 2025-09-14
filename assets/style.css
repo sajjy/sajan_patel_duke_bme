@@ -490,17 +490,24 @@ html {
 
 .education-item {
   display: flex;
-  align-items: center;
-  /* gap: 1rem; */
+  align-items: center; /* keeps logo and text side by side */
+  gap: 1rem;
   margin-bottom: 0.2rem;
 }
 
 .education-item img {
-  height: 48px; 
-  width: 48px; 
-  border-radius: 8px; 
+  height: 48px;
+  width: 48px;
+  border-radius: 8px;
   background: #fff;
-  /* margin: 10px; */
+  flex-shrink: 0;
+}
+
+/* Text column */
+.education-item div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers text block vertically relative to logo */
 }
 
 .education-flex {
@@ -510,22 +517,19 @@ html {
 }
 
 .education-list {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex: 0 1 auto;   /* only as wide as its content (no forced growth) */
 }
 
 .education-duke-img {
-  flex: 1;
+  flex: 1;          /* take up all remaining space */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .education-duke-img img {
-  max-width: 320px;
-  width: 100%;
+  width: 100%;      /* fill the container */
+  height: auto;     /* keep aspect ratio */
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   object-fit: cover;
