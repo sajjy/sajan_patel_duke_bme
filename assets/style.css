@@ -329,10 +329,9 @@ html {
 }
 
 #hobby-display {
-  flex: 1;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: left;
+  text-align: center;
 }
 
 .hobby-tags {
