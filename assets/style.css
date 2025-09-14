@@ -393,6 +393,7 @@ html {
 #hobby-desc {
   margin-top: 1rem;
   font-size: 1.2rem;
+  font-style: italic;
 }
 
 /* Animated name */
@@ -463,7 +464,6 @@ html {
 }
 
 
-
 /* Top Menu */
 .top-menu {
   position: fixed;
@@ -486,4 +486,11 @@ html {
 .top-menu a:hover {
   color: var(--accent-1);
   text-decoration: underline;
+}
+
+.education-item {
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+  margin-bottom: 0.2rem;
 }
