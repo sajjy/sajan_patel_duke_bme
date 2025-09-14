@@ -287,6 +287,11 @@ html {
   .top-menu {
     display: none !important;
   }
+
+  .hobby-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
   
 }
 
