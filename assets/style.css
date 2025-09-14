@@ -329,7 +329,7 @@ html {
 }
 
 #hobby-display {
-  flex: 1;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -370,7 +370,7 @@ html {
 }
 
 #hobby-img {
-    height: 420px;
+  height: 420px;
   object-fit: cover;
   border-radius: 12px;
 }
