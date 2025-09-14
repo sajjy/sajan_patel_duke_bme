@@ -94,19 +94,26 @@
         
         <!-- HOBBIES -->
         <h2>Hobbies</h2>
-        <div class="hobby-tags">
-          <span class="hobby-tag">
-            <img src="{{ '/assets/hobby-icons/running.png' | relative_url }}" alt="Running">
-            Competitive Running
-          </span>
-          <span class="hobby-tag">
-            <img src="{{ '/assets/hobby-icons/triathlon.svg' | relative_url }}" alt="Triathlon">
-            Triathlon
-          </span>
-          <span class="hobby-tag">
-            <img src="{{ '/assets/hobby-icons/book.svg' | relative_url }}" alt="Reading">
-            Reading
-          </span>
+          <div class="hobby-section">
+            <div class="hobby-tags" id="hobby-tags">
+              <span class="hobby-tag" data-hobby="running">
+                <img src="{{ '/assets/hobby-icons/running.png' | relative_url }}" alt="Running">
+                Distance Running
+              </span>
+              <span class="hobby-tag" data-hobby="triathlon">
+                <img src="{{ '/assets/hobby-icons/triathlon.svg' | relative_url }}" alt="Triathlon">
+                Triathlon
+              </span>
+              <span class="hobby-tag" data-hobby="reading">
+                <img src="{{ '/assets/hobby-icons/book.svg' | relative_url }}" alt="Reading">
+                Reading
+              </span>
+            </div>
+            <div class="hobby-display" id="hobby-display">
+              <img id="hobby-img" src="{{ '/assets/triathlon-portrait.jpg' | relative_url }}" alt="Hobby">
+              <div id="hobby-desc">Long-term goal: complete an Ironman Triathlon</div>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -306,8 +313,64 @@
         img.src = photoList[idx];
       }, 5000);
     });
+  </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Hobby data
+      const hobbies = [
+        {
+          key: "running",
+          img: "{{ '/assets/hobby-icons/running-portrait.jpg' | relative_url }}",
+          desc: "Currently training for the 2025 Philadelpha Half-Marathon"
+        },
+        {
+          key: "triathlon",
+          img: "{{ '/assets/hobby-icons/triathlon-portrait.jpg' | relative_url }}",
+          desc: "Long-term goal: complete an Ironman Triathlon"
+        },
+        {
+          key: "reading",
+          img: "{{ '/assets/hobby-icons/alchemist.jpg' | relative_url }}",
+          desc: "My favorite book of all time is <em>The Alchemist</em>"
+        }
+      ];
 
-    </script>
+      const tags = Array.from(document.querySelectorAll('.hobby-tag'));
+      const img = document.getElementById('hobby-img');
+      const desc = document.getElementById('hobby-desc');
+      let idx = 1; // Start with triathlon (index 1)
+      let interval;
+
+      function selectHobby(i) {
+        tags.forEach((tag, j) => tag.classList.toggle('selected', i === j));
+        img.src = hobbies[i].img;
+        img.alt = hobbies[i].key;
+        desc.textContent = hobbies[i].desc;
+        idx = i;
+      }
+
+      // Click to select hobby
+      tags.forEach((tag, i) => {
+        tag.addEventListener('click', () => {
+          selectHobby(i);
+          resetInterval();
+        });
+      });
+
+      function nextHobby() {
+        selectHobby((idx + 1) % hobbies.length);
+      }
+
+      function resetInterval() {
+        clearInterval(interval);
+        interval = setInterval(nextHobby, 3000);
+      }
+
+      // Initialize
+      selectHobby(idx);
+      interval = setInterval(nextHobby, 3000);
+    });
+  </script>
 </body>
 </html>

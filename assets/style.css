@@ -322,6 +322,17 @@ html {
 }
 
 /* Hobby Tags */
+.hobby-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+#hobby-display {
+  flex:1;
+  text-align:center;
+}
+
 .hobby-tags {
   margin: 1.5rem 0;
   display: flex;
@@ -349,10 +360,23 @@ html {
   height: 32px;
 }
 
-.hobby-tag:hover {
-  background-color: var(--accent-1);
-  color: #222;
-  transform: translateY(-3px) scale(1.05);
+.hobby-tag.selected {
+  background-color: var(--accent-1) !important;
+  color: #222 !important;
+  border-color: var(--accent-1) !important;
+  transform: scale(1.07);
+}
+
+#hobby-img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+#hobby-desc {
+  margin-top: 1rem;
+  font-size: 1.2rem;
 }
 
 /* Animated name */
