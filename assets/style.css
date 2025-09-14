@@ -181,8 +181,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 2rem 0;
-  gap: 1rem;
+  margin: 3rem 0;
+  gap: 1rem;  
 }
 
 .project-card .project-text {
@@ -221,6 +221,24 @@ html {
 }
 
 #project-2-images {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+#project-3-images {
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+#project-4-images {
   height: 320px;
   width: auto;
   object-fit: cover;
