@@ -495,6 +495,14 @@ html {
   margin-bottom: 0.2rem;
 }
 
+.education-item img {
+  height: 48px; 
+  width: 48px; 
+  border-radius: 8px; 
+  background: #fff;
+  margin: 10px;
+}
+
 .education-flex {
   display: flex;
   align-items: flex-start;
@@ -516,7 +524,7 @@ html {
 }
 
 .education-duke-img img {
-  max-width: 320px;
+  max-width: 500px;
   width: 100%;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
