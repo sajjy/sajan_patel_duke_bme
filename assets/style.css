@@ -1,9 +1,9 @@
 :root {
   --accent-1: #00ddff;
+  --accent-2: #ace5f6a9;
   --bkgrd-light: rgba(24,24,35,1);
   --bkgrd-dark: #000000;
 }
-
 
 /* Reset + base */
 body, html {
@@ -316,10 +316,10 @@ html {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background-color: #222;
+  background-color: rgba(34, 34, 34, 0.0);
   color: #fff;
-  border: 1px solid var(--accent-1);
-  border-radius: 20px;
+  border: none;
+  /* border-radius: 20px; */
   padding: 0.35rem 0.9rem;
   font-size: 0.85rem;
   font-weight: 500;
@@ -331,10 +331,10 @@ html {
   height: 18px;
 }
 
-.tag:hover {
+/* .tag:hover {
   background-color: var(--accent-1);
   transform: translateY(-2px);
-}
+} */
 
 /* Hobby Tags */
 .hobby-section {
@@ -362,7 +362,7 @@ html {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  background-color: #ace5f6a9;
+  background-color: var(--accent-2);
   color: #000000;
   border: 2px solid var(--accent-1);
   border-radius: 32px;
