@@ -208,6 +208,7 @@
           </div>
           <div class="education-duke-img">
             <img src="{{ '/assets/duke-university.jpg' | relative_url }}" alt="Duke University Campus">
+            <img src="{{ '/assets/old-well-unc.jpg' | relative_url }}" alt="UNC Chapel Hill Campus">
           </div>
         </div>
         
@@ -359,29 +360,56 @@
   </script>
 
   <script>
-    function setupCarousel(carouselId, intervalTime = 10000) {
+    function setupInfiniteCarousel(carouselId, intervalTime = 12000) {
       const carousel = document.getElementById(carouselId);
       const track = carousel.querySelector('.carousel-track');
       const slides = Array.from(track.children);
+
       const prevButton = carousel.querySelector('.prev');
       const nextButton = carousel.querySelector('.next');
 
-      let currentIndex = 0;
+      // Clone first and last slides
+      const firstClone = slides[0].cloneNode(true);
+      const lastClone = slides[slides.length - 1].cloneNode(true);
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, slides[0]);
+
+      const allSlides = Array.from(track.children);
+      let currentIndex = 1; // start at first "real" slide
       let interval;
 
-      function updateSlide(index) {
-        track.style.transform = `translateX(-${index * 100}%)`;
+      const slideWidth = carousel.offsetWidth;
+
+      // Set initial position
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      function updateSlide() {
+        track.style.transition = "transform 0.6s ease-in-out";
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
       }
 
       function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlide(currentIndex);
+        currentIndex++;
+        updateSlide();
       }
 
       function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlide(currentIndex);
+        currentIndex--;
+        updateSlide();
       }
+
+      track.addEventListener("transitionend", () => {
+        if (allSlides[currentIndex].isEqualNode(firstClone)) {
+          track.style.transition = "none";
+          currentIndex = 1;
+          track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        if (allSlides[currentIndex].isEqualNode(lastClone)) {
+          track.style.transition = "none";
+          currentIndex = allSlides.length - 2;
+          track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+      });
 
       function startAutoSlide() {
         interval = setInterval(nextSlide, intervalTime);
@@ -392,18 +420,19 @@
         startAutoSlide();
       }
 
-      nextButton.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
-      prevButton.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+      nextButton.addEventListener("click", () => { nextSlide(); resetAutoSlide(); });
+      prevButton.addEventListener("click", () => { prevSlide(); resetAutoSlide(); });
 
       startAutoSlide();
     }
 
-    // Initialize carousels
+    // Initialize both carousels
     document.addEventListener("DOMContentLoaded", () => {
-      setupCarousel("carousel-proj-1", 5000);
-      setupCarousel("carousel-proj-2", 6000);
+      setupInfiniteCarousel("carousel-proj-1", 5000);
+      setupInfiniteCarousel("carousel-proj-2", 6000);
     });
   </script>
+
 
 </body>
 </html>
