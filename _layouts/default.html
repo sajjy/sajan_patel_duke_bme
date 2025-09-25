@@ -87,8 +87,14 @@
           </span>
         </div>
       </div>
-      <div class="project-image">
-        <img id="project-1-images" src="{{ '/assets/project-images/microprocessor-mips/killer-candy-preview-gif.gif' | relative_url }}" alt="Project1_image">
+      <div class="carousel" id="carousel-proj-1">
+        <div class="carousel-track">
+          <img src="{{ '/assets/project-images/microprocessor-mips/killer-candy-preview-gif.gif' | relative_url }}" alt="Microprocessor 1">
+          <img src="{{ '/assets/project-images/microprocessor-mips/nexus-board.png' | relative_url }}" alt="Microprocessor 2">
+          <img src="{{ '/assets/project-images/microprocessor-mips/microprocessor-diagram.png' | relative_url }}" alt="Microprocessor 3">
+        </div>
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
       </div>
     </div>
 
@@ -112,8 +118,13 @@
         </div>
           
       </div>
-      <div class="project-image">
-        <img id="project-2-images" src="{{ '/assets/project-images/ev3-robot/robot-navigating-course.gif' | relative_url }}" alt="Project2_image">
+      <div class="carousel" id="carousel-proj-2">
+        <div class="carousel-track">
+          <img src="{{ '/assets/project-images/ev3-robot/robot.png' | relative_url }}" alt="Robot 1">
+          <img src="{{ '/assets/project-images/ev3-robot/robot-navigating-course.gif' | relative_url }}" alt="Robot 2">
+        </div>
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
       </div>
     </div>
 
@@ -291,35 +302,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const photoList = [
-        "{{ '/assets/project-images/microprocessor-mips/killer-candy-preview-gif.gif' | relative_url }}",
-        "{{ '/assets/project-images/microprocessor-mips/nexus-board.png' | relative_url }}",
-        "{{ '/assets/project-images/microprocessor-mips/microprocessor-diagram.png' | relative_url }}"
-      ];
-      let idx = 0;
-      const img = document.getElementById("project-1-images");
-      setInterval(() => {
-        idx = (idx + 1) % photoList.length;
-        img.src = photoList[idx];
-      }, 5000);
-    });
-
-    document.addEventListener("DOMContentLoaded", function() {
-      const photoList = [
-        "{{ '/assets/project-images/ev3-robot/robot.png' | relative_url }}",
-        "{{ '/assets/project-images/ev3-robot/robot-navigating-course.gif' | relative_url }}",
-      ];
-      let idx = 0;
-      const img = document.getElementById("project-2-images");
-      setInterval(() => {
-        idx = (idx + 1) % photoList.length;
-        img.src = photoList[idx];
-      }, 5000);
-    });
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
       // Hobby data
       const hobbies = [
         {
@@ -375,5 +357,53 @@
       interval = setInterval(nextHobby, 3000);
     });
   </script>
+
+  <script>
+    function setupCarousel(carouselId, intervalTime = 10000) {
+      const carousel = document.getElementById(carouselId);
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const prevButton = carousel.querySelector('.prev');
+      const nextButton = carousel.querySelector('.next');
+
+      let currentIndex = 0;
+      let interval;
+
+      function updateSlide(index) {
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlide(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlide(currentIndex);
+      }
+
+      function startAutoSlide() {
+        interval = setInterval(nextSlide, intervalTime);
+      }
+
+      function resetAutoSlide() {
+        clearInterval(interval);
+        startAutoSlide();
+      }
+
+      nextButton.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+      prevButton.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+
+      startAutoSlide();
+    }
+
+    // Initialize carousels
+    document.addEventListener("DOMContentLoaded", () => {
+      setupCarousel("carousel-1", 5000);
+      setupCarousel("carousel-2", 6000);
+    });
+  </script>
+
 </body>
 </html>
