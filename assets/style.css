@@ -463,18 +463,29 @@ html {
 }
 
 .education-duke-img {
-  flex: 1;          /* take up all remaining space */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;      /* base alignment */
+  gap: 1.5rem;              /* spacing between images */
+  position: relative;
 }
 
 .education-duke-img img {
-  width: 100%;      /* fill the container */
-  height: auto;     /* keep aspect ratio */
+  width: 80%;               /* scale images */
+  max-width: 400px;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-  object-fit: cover;
+}
+
+/* Offsets */
+.duke-img {
+  align-self: flex-start;   /* push slightly left */
+  margin-left: -5%;         /* adjust as needed */
+}
+
+.unc-img {
+  align-self: flex-end;     /* push slightly right */
+  margin-right: -5%;        /* adjust as needed */
 }
 
 .carousel {
@@ -483,6 +494,7 @@ html {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
+  transition: height 0.5s ease; /* smooth height changes */
 }
 
 .carousel-track {
@@ -490,10 +502,11 @@ html {
   transition: transform 0.6s ease-in-out;
 }
 
-.carousel img {
+.carousel-track img {
+  flex: 0 0 100%;       /* one full-width slide at a time */
   max-width: 100%;
-  height: auto;      /* maintain aspect ratio */
-  object-fit: contain; /* don’t crop */
+  height: auto;         /* natural height */
+  object-fit: contain;
   border-radius: 12px;
   display: block;
 }
