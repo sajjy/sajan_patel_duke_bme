@@ -531,6 +531,49 @@ html {
   background: rgba(0,0,0,0.7);
 }
 
+/* Expand icon overlay */
+.expandable {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.expand-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.8rem;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  pointer-events: none; /* icon doesn't block the click */
+}
+
+/* Lightbox overlay */
+.lightbox {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  transition: transform 0.3s ease;
+}
+
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .project-card, .project-card.reverse {

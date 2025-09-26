@@ -144,8 +144,11 @@
           </span>
         </div>
       </div>
-      <div class="project-image">
-        <img id="project-3-images" src="{{ '/assets/project-images/addiction-neuroscience/addiction-neuroscience-poster.jpg' | relative_url }}" alt="Project3_image">
+      <div class="project-image expandable">
+        <img id="project-3-images"
+            src="{{ '/assets/project-images/addiction-neuroscience/addiction-neuroscience-poster.jpg' | relative_url }}"
+            alt="Project3_image">
+        <span class="expand-icon">⤢</span>
       </div>
     </div>
 
@@ -239,6 +242,9 @@
       </div>
     </div>
   </section>
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Expanded view">
+  </div>
 
   <script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -417,6 +423,30 @@
       setupCarousel("carousel-proj-2", 6000);
     });
   </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = lightbox.querySelector("img");
+
+      // Target only expandable images
+      document.querySelectorAll(".expandable img").forEach(img => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.classList.add("active");
+        });
+      });
+
+      // Close when clicking anywhere outside the image
+      lightbox.addEventListener("click", (e) => {
+        if (e.target !== lightboxImg) {
+          lightbox.classList.remove("active");
+        }
+      });
+    });
+  </script>
+
+  
 
 
 
