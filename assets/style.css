@@ -573,6 +573,30 @@ html {
   transition: transform 0.3s ease;
 }
 
+.top-left-menu {
+  position: fixed;
+  top: 32px;
+  left: 48px;       /* mirror of right: 48px; in .top-menu */
+  z-index: 100;
+}
+
+.top-left-menu a {
+  display: inline-block;
+}
+
+.linkedin-icon {
+  width: 28px;      /* adjust size */
+  height: 28px;
+  filter: brightness(0) invert(1); /* makes icon white if it's dark */
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.linkedin-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(0) saturate(100%) invert(55%) sepia(97%) saturate(2098%) hue-rotate(176deg) brightness(97%) contrast(101%);
+  /* this gives LinkedIn's blue on hover */
+}
+
 
 /* Mobile responsive */
 @media (max-width: 768px) {
