@@ -296,21 +296,25 @@
         showNextLetter();
       }, 200);
 
-      // Hide menu after scrolling past hero
+      // Hide both menus after scrolling past hero
       const topMenu = document.querySelector('.top-menu');
+      const topLeftMenu = document.querySelector('.top-left-menu');
       const heroSection = document.getElementById('hero');
 
       function handleMenuVisibility() {
         const heroRect = heroSection.getBoundingClientRect();
         if (heroRect.bottom <= 0) {
-          topMenu.style.display = 'none';
+          if (topMenu) topMenu.style.display = 'none';
+          if (topLeftMenu) topLeftMenu.style.display = 'none';
         } else {
-          topMenu.style.display = '';
+          if (topMenu) topMenu.style.display = '';
+          if (topLeftMenu) topLeftMenu.style.display = '';
         }
       }
 
       window.addEventListener('scroll', handleMenuVisibility, { passive: true });
       handleMenuVisibility();
+
     });
   </script>
 
