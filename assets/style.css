@@ -585,15 +585,13 @@ html {
 }
 
 .linkedin-icon {
-  width: 28px;      /* adjust size */
-  height: 28px;
-  filter: brightness(0) invert(1); /* makes icon white if it's dark */
+  width: 48px;      /* adjust size */
+  height: 48px;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .linkedin-icon:hover {
   transform: scale(1.1);
-  filter: brightness(0) saturate(100%) invert(55%) sepia(97%) saturate(2098%) hue-rotate(176deg) brightness(97%) contrast(101%);
   /* this gives LinkedIn's blue on hover */
 }
 
