@@ -604,6 +604,38 @@ html {
   /* this gives LinkedIn's blue on hover */
 }
 
+#current-projects a:hover {
+  color: var(--accent-1);
+  text-decoration: underline;
+}
+
+#current-projects a {
+  color: #000000 !important;
+  text-decoration: underline !important;
+}
+
+#current-projects a:hover {
+  color: var(--accent-1);
+  text-decoration: underline;
+}
+
+#current-projects {
+  background: #fff !important;
+  color: #000;  /* text color */
+  padding: 2rem 2rem;
+  min-height: 60vh;
+}
+
+#current-projects * {
+  color: #000;
+}
+
+#current-projects h1 {
+  font-size: 3.2rem; /* larger heading */
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
 
 /* Mobile responsive */
 @media (max-width: 768px) {
