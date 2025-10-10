@@ -665,6 +665,14 @@ html {
     object-fit: contain; /* avoid cropping on mobile */
   }
 
+  .carousel {
+    .project-image {
+    display: block;
+    justify-content: center;
+    order: 2; /* puts image after text even if markup differs */
+    width: 100%;
+  }
+
   .hero-card {
     flex-direction: column;
     text-align: center;
