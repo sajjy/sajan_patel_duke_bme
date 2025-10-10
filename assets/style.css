@@ -611,8 +611,26 @@ html {
     flex-direction: column;
   }
 
-  .project-card img {
+  /* make sure text stays above image */
+  .project-card .project-text {
+    order: 1;
+  }
+
+  /* image container */
+  .project-image {
+    display: block;
+    justify-content: center;
+    order: 2; /* puts image after text even if markup differs */
+    width: 100%;
+  }
+
+  .project-image img {
+    width: 100%;      /* fill screen width */
     max-width: 100%;
+    height: auto;     /* preserve aspect ratio */
+    margin: 1rem 0 0; /* small spacing above image */
+    border-radius: 5px;
+    object-fit: contain; /* avoid cropping on mobile */
   }
 
   .hero-card {
