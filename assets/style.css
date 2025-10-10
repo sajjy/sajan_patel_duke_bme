@@ -256,6 +256,15 @@ html {
   margin: 0 auto;
 }
 
+#project-6-images {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
 .tech-tags {
   margin: 1rem 0;
   display: flex;
@@ -666,7 +675,6 @@ html {
   }
 
   .carousel {
-    .project-image {
     display: block;
     justify-content: center;
     order: 2; /* puts image after text even if markup differs */
