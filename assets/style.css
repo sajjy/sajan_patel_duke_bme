@@ -233,7 +233,7 @@ html {
   height: 400px;
   width: auto;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 8px;
   display: block;
   margin: 0 auto;
 }
@@ -242,7 +242,16 @@ html {
   height: 320px;
   width: auto;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+#project-5-images {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 5px;
   display: block;
   margin: 0 auto;
 }
