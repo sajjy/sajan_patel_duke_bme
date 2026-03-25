@@ -265,6 +265,13 @@ html {
   margin: 0 auto;
 }
 
+.project-8-image-container {
+  display: flex;
+  flex-direction: column; /* Stacks the images vertically */
+  align-items: center;    /* Centers the images horizontally */
+  gap: 20px;              /* Adds some space between the two images */
+}
+
 #project-8-diagram  #project-8-animation {
   height: 240px;
   width: auto;
