@@ -265,16 +265,8 @@ html {
   margin: 0 auto;
 }
 
-#project-8-diagram {
-  height: 320px;
-  width: auto;
-  object-fit: cover;
-  border-radius: 5px;
-  display: block;
-  margin: 0 auto;
-}
 #project-8-diagram  #project-8-animation {
-  height: 320px;
+  height: 240px;
   width: auto;
   object-fit: cover;
   border-radius: 5px;
