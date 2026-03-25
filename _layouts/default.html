@@ -106,6 +106,46 @@
 
     <div class="project-card reverse">
       <div class="project-text">
+        <h2>Engineering Rhythm: A Neural Network Simulation for Muscle Coordination</h2>
+        <h3>Description</h3>
+        <p>
+          <i>How does the central nervous system generate the rhythmic patterns required for locomotion?</i>
+          To explore this, I built a computer model of a physiological neural network known as a unit pattern generator (uPG).
+          Displayed alongside the original theoretical diagram, my dynamic animation visualizes the simulated membrane potentials
+          of the network over time, showing how this configuration of inhibitory and excitatory connections
+          successfully produces alternating motor output for an agonist/antagonist muscle pair, such as the quadriceps and hamstring. 
+        </p>
+        <h3>Project Features</h3>
+        <ul>
+          <li>
+            Engineered a thread-safe embedded system using <a href="https://www.zephyrproject.org/">Zephyr</a> RTOS and a State Machine Framework (SMF)
+            for <strong>concurrent data acquisition, processing, and BLE communication</strong> tasks.</li>
+          <li>
+            <strong>Computational Neuroscience:</strong>
+            Translated a theoretical biological topology into a functional mathematical model using Python and forward Euler integration.</li>
+          <li>
+            <strong>Emergent Rhythms:</strong>
+            Demonstrated how specific inhibitory and excitatory pathways naturally produces sustained, alternating neural oscillations.</li>
+          <li>
+            <strong></strong>Visualizing Voltage:</strong>
+            Created a visual frame-generator that translates raw membrane potential data into an intuitive color scale,
+            capturing individual action potentials (flashes) and sustained phase shifts.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+        </div>
+        </div>
+      </div>
+      <div class="project-image">
+        <img id="project-5-images" src="{{ '/assets/project-images/pattern_generator/animation.gif' | relative_url }}" alt="Project5_image">
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-text">
         <h2>Recording Nerve Signals (Model)</h2>
           <p>
             In Python, I've modeled extracellular neural recordings from implanted electrodes.
