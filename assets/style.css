@@ -272,8 +272,8 @@ html {
   gap: 20px;              /* Adds some space between the two images */
 }
 
-#project-8-diagram  #project-8-animation {
-  height: 100px;
+#project-8-diagram,  #project-8-animation {
+  height: 250px;
   width: auto;
   object-fit: cover;
   border-radius: 5px;
