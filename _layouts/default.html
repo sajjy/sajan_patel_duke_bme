@@ -151,6 +151,8 @@
   <script>
     function setupCarousel(carouselId, intervalTime = 10000) {
       const carousel = document.getElementById(carouselId);
+      if (!carousel) return;  // If the carousel doesn't exist on this page, stop here.
+      
       const track = carousel.querySelector('.carousel-track');
       const slides = Array.from(track.children);
       const prevButton = carousel.querySelector('.prev');
