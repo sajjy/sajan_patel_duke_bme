@@ -15,6 +15,9 @@ A complete basic microprocessor designed in SystemVerilog and deployed on a Nexy
 **Python-powered Robot Navigates Obstacle Course**
 Autonomous LEGO MINDSTORMS EV3 robots programmed in Python to process ultrasonic and bump sensor data for real-time positional tracking and obstacle avoidance.
 
+**Electrical Modeling of Neuron & Propagation of Action Potential**
+A computational Python model that treats the neuron as a complex electrical circuit, utilizing the Hodgkin-Huxley equations to simulate how stimuli—such as from an implanted electrode—interact with ion channels and myelination to trigger action potentials.
+
 **OXTR Expression in the Hypothalamus and Amygdala Following MDMA Administration**
 A neuroscience research project utilizing RT-qPCR and R-based data analysis to investigate how MDMA impacts oxytocin-receptor expression and contributes to prosocial behaviors.
 
