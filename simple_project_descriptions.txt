@@ -1,0 +1,22 @@
+Here are concise, compelling descriptions for your link cards. Each one is designed to quickly highlight the core technical achievements and the primary purpose of the project:
+
+**Embedded Firmware for ECG / Temperature Medical Device**
+A thread-safe embedded system engineered with Zephyr RTOS and C for concurrent real-time ECG signal processing, fault detection, and Bluetooth Low Energy (BLE) transmission.
+
+**Engineering Rhythm: A Neural Network Simulation for Muscle Coordination**
+A computational Python model of a Unit Pattern Generator (uPG) that dynamically visualizes how specific neural pathways naturally produce alternating motor outputs for locomotion.
+
+**Recording Nerve Signals (Model)**
+A mathematical simulation built in Python to reconstruct extracellular potentials from implanted electrodes, providing a framework to optimize functional electrical stimulation (FES) systems.
+
+**Full Basic Microprocessor with MIPS Assembly Game**
+A complete basic microprocessor designed in SystemVerilog and deployed on a Nexys A7 board, featuring a custom MIPS assembly game with dynamic visual and audio outputs.
+
+**Python-powered Robot Navigates Obstacle Course**
+Autonomous LEGO MINDSTORMS EV3 robots programmed in Python to process ultrasonic and bump sensor data for real-time positional tracking and obstacle avoidance.
+
+**OXTR Expression in the Hypothalamus and Amygdala Following MDMA Administration**
+A neuroscience research project utilizing RT-qPCR and R-based data analysis to investigate how MDMA impacts oxytocin-receptor expression and contributes to prosocial behaviors.
+
+**Data Imputation and Graph-based Approach for Post-Stroke Immune System Response Profiling**
+A computational biology study leveraging data imputation and Leiden clustering in Python to successfully map immune system responses from incomplete clinical datasets.
