@@ -448,7 +448,7 @@ html {
   min-height: 60vh;
 }
 
-#current-projects *:not(.btn):not(.btn-black) {
+#about-me *:not(.btn):not(.btn-black) {
   color: #000;
 }
 
