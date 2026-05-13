@@ -667,9 +667,9 @@ html {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 100%; /* 1:1 Square Ratio */
-  max-width: 500px;   /* Matches your existing project image sizes */
-  margin: 0 auto;    /* Centers the video if the column is wider */
+  padding-top: 100%; 
+  max-width: 750px;   /* Increased from 500px */
+  margin: 0 auto;    
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
