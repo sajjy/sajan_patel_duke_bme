@@ -662,11 +662,29 @@ html {
   text-align: left;
 }
 
-/* Special class for vertically stacked projects */
+/* --- 1. Base Video Container (Shared by all) --- */
+.video-responsive {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- 2. Layout: Stacked Card --- */
 .stacked-card {
-  flex-direction: column !important; /* Overrides the default row layout */
+  flex-direction: column !important;
   align-items: center;
-  text-align: center; /* Centers the title */
+  text-align: center;
   gap: 2rem;
 }
 
@@ -675,39 +693,63 @@ html {
   margin-bottom: 1rem;
 }
 
-/* Make the video container much larger */
-.stacked-card .project-image {
-  width: 100%;
-  max-width: 320px; /* Adjust this to control how much of the page it takes */
-  display: flex;
-  justify-content: center;
-  margin: 0 auto; /* Ensures it stays centered if the container is wider */
-}
-
-/* Ensure the text block stays readable and left-aligned even when centered */
 .stacked-card .project-text {
   width: 100%;
   max-width: 850px;
-  text-align: left; /* Keeps bullet points aligned to the left */
+  text-align: left;
 }
 
-/* 1:1 Video sizing for the stacked layout */
-.stacked-card .video-responsive {
-  position: relative;
-  overflow: hidden;
+/* --- 3. Video Grid (Side-by-Side) --- */
+.video-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
   width: 100%;
-  padding-top: 100%; /* Keeps the 1:1 square ratio */
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  max-width: 1000px;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-.stacked-card .video-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* 1:1 Ratio for Grid Items (Math accounts for the gap) */
+.video-grid .video-responsive {
+  flex: 1;
+  padding-top: calc(50% - 0.75rem); 
+}
+
+/* --- 4. Single Video (Fallback/Specific) --- */
+.stacked-card .project-image {
   width: 100%;
-  height: 100%;
-  border: none;
+  max-width: 320px; /* increase for better visibility */
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* 1:1 Ratio for Single Video */
+.stacked-card .project-image .video-responsive {
+  padding-top: 100%; 
+}
+
+/* --- 5. Utilities & Mobile --- */
+.video-caption {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .video-grid .video-responsive {
+    width: 100%;
+    max-width: 500px;
+    padding-top: 100%; /* Becomes a full square when stacked vertically */
+  }
 }
 
 
