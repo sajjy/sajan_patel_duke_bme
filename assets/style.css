@@ -678,9 +678,10 @@ html {
 /* Make the video container much larger */
 .stacked-card .project-image {
   width: 100%;
-  max-width: 900px; /* Adjust this to control how much of the page it takes */
+  max-width: 320px; /* Adjust this to control how much of the page it takes */
   display: flex;
   justify-content: center;
+  margin: 0 auto; /* Ensures it stays centered if the container is wider */
 }
 
 /* Ensure the text block stays readable and left-aligned even when centered */
