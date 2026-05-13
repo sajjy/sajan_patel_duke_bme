@@ -185,7 +185,7 @@ html {
   text-align: left;
 }
 
-#projects a {
+#projects a:not(.btn):not(.btn-black) {
   color: #FFF !important;
   text-decoration: underline !important;
 }
@@ -431,14 +431,14 @@ html {
 }
 
 /* About Me section links */
-#about-me a {
+#about-me a:not(.btn):not(.btn-black) {
   color: #000000 !important;
   text-decoration: underline !important;
 }
 
-#about-me a:hover {
-  color: var(--accent-1);
-  text-decoration: underline;
+#about-me a:not(.btn):not(.btn-black):hover {
+  color: var(--accent-1) !important;
+  text-decoration: underline !important;
 }
 
 #about-me {
@@ -648,19 +648,14 @@ html {
   /* this gives LinkedIn's blue on hover */
 }
 
-#current-projects a:hover {
-  color: var(--accent-1);
-  text-decoration: underline;
-}
-
-#current-projects a {
+#current-projects a:not(.btn):not(.btn-black) {
   color: #000000 !important;
   text-decoration: underline !important;
 }
 
-#current-projects a:hover {
-  color: var(--accent-1);
-  text-decoration: underline;
+#current-projects a:not(.btn):not(.btn-black):hover {
+  color: var(--accent-1) !important;
+  text-decoration: underline !important;
 }
 
 #current-projects {
