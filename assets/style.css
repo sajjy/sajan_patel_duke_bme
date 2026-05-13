@@ -662,21 +662,45 @@ html {
   text-align: left;
 }
 
-/* Container for 1:1 Aspect Ratio */
-.video-responsive {
+/* Special class for vertically stacked projects */
+.stacked-card {
+  flex-direction: column !important; /* Overrides the default row layout */
+  align-items: center;
+  text-align: center; /* Centers the title */
+  gap: 2rem;
+}
+
+.stacked-card h2 {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Make the video container much larger */
+.stacked-card .project-image {
+  width: 100%;
+  max-width: 900px; /* Adjust this to control how much of the page it takes */
+  display: flex;
+  justify-content: center;
+}
+
+/* Ensure the text block stays readable and left-aligned even when centered */
+.stacked-card .project-text {
+  width: 100%;
+  max-width: 850px;
+  text-align: left; /* Keeps bullet points aligned to the left */
+}
+
+/* 1:1 Video sizing for the stacked layout */
+.stacked-card .video-responsive {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 320px;
-  padding-top: 100%; /* 1:1 Square Ratio */
-  /* max-width: 500px;   /* Matches your existing project image sizes */
-  margin: 0 auto;    /* Centers the video if the column is wider */
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding-top: 100%; /* Keeps the 1:1 square ratio */
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Force the iframe to fill the square container */
-.video-responsive iframe {
+.stacked-card .video-responsive iframe {
   position: absolute;
   top: 0;
   left: 0;
