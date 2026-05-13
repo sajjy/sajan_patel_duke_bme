@@ -146,6 +146,24 @@ html {
   color: black;
 }
 
+.btn-black {
+  display: inline-block;
+  margin-top: 1.5rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  padding: clamp(0.7rem, 2vw, 1.1rem) clamp(1.5rem, 5vw, 2.5rem);
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-black:hover {
+  background: black;
+  color: white;
+}
+
 /* Projects Section */
 #projects {
   background: black;
