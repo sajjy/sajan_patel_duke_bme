@@ -774,6 +774,32 @@ html {
   display: block;
 }
 
+
+/* --- 6. 50/50 Split Video (For standard .project-card layout) --- */
+.project-video {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  max-width: 500px; /* Aligns with your standard image max-widths */
+}
+
+/* 16:9 Aspect Ratio for standard YouTube videos */
+.project-video .video-responsive {
+  padding-top: 56.25%; 
+}
+
+@media (max-width: 768px) {
+  .project-video {
+    max-width: 100%;
+    padding: 0;
+    margin-top: 1.5rem;
+  }
+}
+
+
 @media (max-width: 768px) {
   .video-grid {
     flex-direction: column;
