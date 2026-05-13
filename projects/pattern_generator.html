@@ -1,0 +1,47 @@
+---
+layout: default
+title: Pattern Generator of Locomotion
+---
+
+<section id="projects" style="padding-top: 100px; min-height: 100vh;">
+  
+  <a href="{{ '/' | relative_url }}" style="display: inline-block; margin-bottom: 2rem;">← Back to Home</a>
+
+    <div class="project-card reverse">
+      <div class="project-text">
+        <h2>Engineering Rhythm: A Neural Network Simulation for Muscle Coordination</h2>
+        <h3>Description</h3>
+        <p>
+          <i>How does the central nervous system generate the rhythmic patterns required for locomotion?</i>
+          To explore this, I built a computer model of a physiological neural network known as a <strong>Unit Pattern Generator (uPG)</strong>.
+          Displayed alongside the original theoretical diagram, my dynamic animation visualizes the simulated membrane potentials
+          of the network over time, showing how this configuration of inhibitory and excitatory connections
+          successfully produces alternating motor output for an agonist/antagonist muscle pair, such as the quadriceps and hamstring. 
+        </p>
+        <h3>Project Features</h3>
+        <ul>
+          <li>
+            <strong>Computational Neuroscience:</strong>
+            Translated a theoretical biological topology into a functional mathematical model using Python and forward Euler integration.</li>
+          <li>
+            <strong>Emergent Rhythms:</strong>
+            Demonstrated how specific inhibitory and excitatory pathways naturally produces sustained, alternating neural oscillations.</li>
+          <li>
+            <strong>Visualizing Voltage:</strong>
+            Created a visual frame-generator that translates raw membrane potential data into an intuitive color scale,
+            capturing individual action potentials (flashes) and sustained phase shifts.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+        </div>
+      </div>
+      <div class="project-8-image-container">
+        <img id="project-8-diagram" src="{{ '/assets/project-images/pattern_generator/diagram.png' | relative_url }}" alt="Diagram" loading="lazy">
+        <img id="project-8-animation" src="{{ '/assets/project-images/pattern_generator/animation.gif' | relative_url }}" alt="Animation" loading="lazy">
+      </div>
+    </div>
+
+</section>

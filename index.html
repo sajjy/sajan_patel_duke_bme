@@ -55,31 +55,21 @@ layout: default
     <div class="project-card">
       <div class="project-text">
         <h2>Brain-Computer Interface (BCI) Cursor Decoder</h2>
-        <ul>
-          <li>
-            Developed a neural decoding algorithm in Python using a <strong>Population Vector Algorithm</strong>
-            to translate raw motor cortex spiking activity into continuous 2D cursor movements.
-          </li>
-          <li>
-            Calculated time-binned firing rates and applied linear regression to establish the <strong>baseline,
-              dynamic range, and preferred direction</strong> of individual neurons.
-          </li>
-          <li>
-            Simulated real-time trajectory reconstruction by taking the vector average of the neural population's normalized
-            firing rates to iteratively update the cursor's frame-by-frame position.
-          </li>
-          <li>
-            <strong>Clinical Impact:</strong> This decoding framework serves as a foundational model for neuroprosthetics.
-            By recording directly from the motor cortex, these algorithms can <strong>restore independence for paralyzed patients</strong>,
-            allowing them to intuitively control external devices or computer cursors in real-time by simply imagining movement.
-          </li>
-        </ul>
+        <p>
+          A neural decoding algorithm engineered in Python that applies a Population Vector Algorithm
+          to translate motor cortex spiking activity into real-time 2D cursor movement,
+          establishing a framework for enabling paralyzed patients to regain control over their external environment
+          and neuroprosthetics.
+        </p>
         <div class="tech-tags">
           <span class="tag">
             <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
             Python
           </span>
         </div>
+
+        <a href="{{ '/projects/bci_cursor.html' | relative_url }}" class="btn-black">Read More →</a>
+
       </div>
       
       <div class="project-video">
@@ -125,17 +115,11 @@ layout: default
       </p>
 
       <div class="project-text">
-        <ul>
-          <li>
-            Built an <strong>automated Python tool to map the brain's physical 3D "wiring"</strong> from MRI scans, 
-            investigating how neural circuits divide between <strong>movement</strong> and <strong>cognition</strong>.</li>
-          <li>
-            <strong>Analyzed connection patterns across 34 subregions</strong> to determine if the cerebellum 
-            uses separate pathways for physical (tremors) versus cognitive (memory) tasks.</li>
-          <li>
-            Created a comprehensive visualization and statistical map of these whole-brain networks to <strong>help guide future targeted therapies,
-            such as deep-brain stimulation implants.</strong></li>
-        </ul>
+        <p>
+          An automated Python tool designed to map the brain's structural 3D "wiring" from MRI scans,
+          analyzing connectivity patterns across 34 subregions to distinguish between movement and cognition
+          pathways for targeted clinical therapies.
+        </p>
 
         <div class="tech-tags">
           <span class="tag">
@@ -167,7 +151,7 @@ layout: default
           </span>
         </div>
 
-        <a href="{{ '/projects/embedded_ecg_temp_ble.html' | relative_url }}" class="btn">Read More →</a>
+        <a href="{{ '/projects/embedded_ecg_temp_ble.html' | relative_url }}" class="btn-black">Read More →</a>
         
       </div>
       <div class="project-image">
@@ -178,60 +162,23 @@ layout: default
     <div class="project-card reverse">
       <div class="project-text">
         <h2>Engineering Rhythm: A Neural Network Simulation for Muscle Coordination</h2>
-        <h3>Description</h3>
         <p>
-          <i>How does the central nervous system generate the rhythmic patterns required for locomotion?</i>
-          To explore this, I built a computer model of a physiological neural network known as a <strong>Unit Pattern Generator (uPG)</strong>.
-          Displayed alongside the original theoretical diagram, my dynamic animation visualizes the simulated membrane potentials
-          of the network over time, showing how this configuration of inhibitory and excitatory connections
-          successfully produces alternating motor output for an agonist/antagonist muscle pair, such as the quadriceps and hamstring. 
+          A computational Python model of a Unit Pattern Generator (uPG) that demonstrates how specific neural pathways
+          naturally produce alternating motor outputs for locomotion.
         </p>
-        <h3>Project Features</h3>
-        <ul>
-          <li>
-            <strong>Computational Neuroscience:</strong>
-            Translated a theoretical biological topology into a functional mathematical model using Python and forward Euler integration.</li>
-          <li>
-            <strong>Emergent Rhythms:</strong>
-            Demonstrated how specific inhibitory and excitatory pathways naturally produces sustained, alternating neural oscillations.</li>
-          <li>
-            <strong>Visualizing Voltage:</strong>
-            Created a visual frame-generator that translates raw membrane potential data into an intuitive color scale,
-            capturing individual action potentials (flashes) and sustained phase shifts.</li>
-        </ul>
         <div class="tech-tags">
           <span class="tag">
             <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
             Python
           </span>
         </div>
+
+        <a href="{{ '/projects/pattern_generator.html' | relative_url }}" class="btn-black">Read More →</a>
+        
       </div>
       <div class="project-8-image-container">
         <img id="project-8-diagram" src="{{ '/assets/project-images/pattern_generator/diagram.png' | relative_url }}" alt="Diagram" loading="lazy">
         <img id="project-8-animation" src="{{ '/assets/project-images/pattern_generator/animation.gif' | relative_url }}" alt="Animation" loading="lazy">
-      </div>
-    </div>
-      
-
-    <div class="project-card">
-      <div class="project-text">
-        <h2>Recording Nerve Signals (Model)</h2>
-          <p>
-            In Python, I've modeled extracellular neural recordings from implanted electrodes.
-            By integrating geometric weighting and membrane current derivatives, this simulation 
-            accurately reconstructs the extracellular potential detected at the electrode interface.
-            This tool provides a framework for optimizing electrode design/placement and signal processing
-            in applications such as <strong>functional electrical stimulation (FES)</strong> and in-vivo <strong>nerve monitoring.</strong>        
-          </p>
-        <div class="tech-tags">
-          <span class="tag">
-            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
-            Python
-          </span>
-        </div>
-      </div>
-      <div class="project-image">
-        <img id="project-7-images" src="{{ '/assets/project-images/axon_recording/axon_recording_animation.gif' | relative_url }}" alt="Project7_image" loading="lazy">
       </div>
     </div>
 
@@ -240,6 +187,29 @@ layout: default
     <section id="projects">
 
     <h1>Projects</h1>
+
+    <div class="project-card">
+      <div class="project-text">
+        <h2>Recording Nerve Signals (Model)</h2>
+          <p>
+            A mathematical simulation to reconstruct extracellular potentials from implanted electrodes,
+            providing a framework to optimize functional electrical stimulation (FES) systems.        
+          </p>
+          
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+        </div>
+
+        <a href="{{ '/projects/recording_nerve_signals.html' | relative_url }}" class="btn-black">Read More →</a>
+
+      </div>
+      <div class="project-image">
+        <img id="project-7-images" src="{{ '/assets/project-images/axon_recording/axon_recording_animation.gif' | relative_url }}" alt="Project7_image" loading="lazy">
+      </div>
+    </div>
 
     <div class="project-card">
         <div class="project-text">

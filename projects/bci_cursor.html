@@ -1,0 +1,53 @@
+---
+layout: default
+title: BCI Cursor Decoder
+---
+
+<section id="projects" style="padding-top: 100px; min-height: 100vh;">
+  
+  <a href="{{ '/' | relative_url }}" style="display: inline-block; margin-bottom: 2rem;">← Back to Home</a>
+
+    <div class="project-card">
+      <div class="project-text">
+        <h2>Brain-Computer Interface (BCI) Cursor Decoder</h2>
+        <ul>
+          <li>
+            Developed a neural decoding algorithm in Python using a <strong>Population Vector Algorithm</strong>
+            to translate raw motor cortex spiking activity into continuous 2D cursor movements.
+          </li>
+          <li>
+            Calculated time-binned firing rates and applied linear regression to establish the <strong>baseline,
+              dynamic range, and preferred direction</strong> of individual neurons.
+          </li>
+          <li>
+            Simulated real-time trajectory reconstruction by taking the vector average of the neural population's normalized
+            firing rates to iteratively update the cursor's frame-by-frame position.
+          </li>
+          <li>
+            <strong>Clinical Impact:</strong> This decoding framework serves as a foundational model for neuroprosthetics.
+            By recording directly from the motor cortex, these algorithms can <strong>restore independence for paralyzed patients</strong>,
+            allowing them to intuitively control external devices or computer cursors in real-time by simply imagining movement.
+          </li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">
+            <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+            Python
+          </span>
+        </div>
+      </div>
+      
+      <div class="project-video">
+        <div class="video-responsive">
+          <iframe 
+            src="https://www.youtube.com/embed/C61dXBjpnHg?rel=0&modestbranding=1" 
+            title="BCI Cursor Decoder Animation"  
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+</section>
