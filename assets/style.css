@@ -786,6 +786,23 @@ html {
   padding-top: 56.25%; 
 }
 
+/* Reusable Back to Home Link */
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 1.15rem !important; /* Matches top-menu font size */
+  font-weight: 600 !important;   /* Matches top-menu font weight */
+  letter-spacing: 0.5px;
+  color: #fff !important;        
+  text-decoration: none !important; /* Removes the default underline */
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--accent-1) !important; /* Adds your cyan accent color on hover */
+  text-decoration: underline !important; /* Adds underline only on hover */
+}
+
 @media (max-width: 768px) {
   .project-video {
     max-width: 100%;
