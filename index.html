@@ -152,21 +152,10 @@ layout: default
     <div class="project-card">
       <div class="project-text">
         <h2>Embedded Firmware for ECG / Temperature Medical Device</h2>
-        <ul>
-          <li>
-            Engineered a thread-safe embedded system using <a href="https://www.zephyrproject.org/">Zephyr</a> RTOS and a State Machine Framework (SMF)
-            for <strong>concurrent data acquisition, processing, and BLE communication</strong> tasks.</li>
-          <li>
-            Implemented real-time digital signal processing algorithms in C to filter noise and <strong>extract
-            heart-rate from raw ECG waveforms.</strong></li>
-          <li>
-            Developed a custom BLE GATT service alongside standard Battery and Heart Rate profiles to <strong>stream
-            sensor data and system diagnostics to a smartphone.</strong></li>
-          <li>
-            Designed a robust fault-tolerance system that detects peripheral failures (I2C/PWM/ADC),
-            transitions the device to a safe state, and <strong>broadcasts error codes for remote debugging.</strong></li>
-          <li><strong>Optimized power consumption</strong> and memory-efficiency for battery-operated usage.</li>
-        </ul>
+          <p>
+            A thread-safe embedded system engineered with Zephyr RTOS and C for concurrent real-time
+             ECG signal processing, fault detection, and Bluetooth Low Energy (BLE) transmission.
+          </p>
         <div class="tech-tags">
           <span class="tag">
             <img src="{{ '/assets/tech-logos/c-programming.svg' | relative_url }}" alt="c-programming">
@@ -177,6 +166,9 @@ layout: default
             Bluetooth
           </span>
         </div>
+
+        <a href="{{ '/projects/embedded_ecg_temp_ble.html' | relative_url }}" class="btn">Read More →</a>
+        
       </div>
       <div class="project-image">
         <img id="project-5-images" src="{{ '/assets/project-images/embedded_ekg/nordic_dk.jpg' | relative_url }}" alt="Project5_image" loading="lazy">
