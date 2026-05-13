@@ -448,6 +448,10 @@ html {
   min-height: 60vh;
 }
 
+#current-projects *:not(.btn):not(.btn-black) {
+  color: #000;
+}
+
 #about-me h1 {
   font-size: 3.2rem; /* larger heading */
   margin-bottom: 0.5rem;
@@ -659,6 +663,10 @@ html {
   color: #000;  /* text color */
   padding: 2rem 2rem;
   min-height: 60vh;
+}
+
+#current-projects *:not(.btn):not(.btn-black) {
+  color: #000;
 }
 
 #current-projects h1 {
