@@ -757,6 +757,23 @@ html {
   margin-bottom: 1.5rem;
 }
 
+/* --- PDF Viewer Styling --- */
+.pdf-container {
+  width: 100%;
+  max-width: 900px; /* Aligns nicely with the video grid above it */
+  margin: 1rem auto;
+  border: 1px solid #333; /* Darker border to match your dark theme */
+  border-radius: 12px; /* Matches your video and image borders */
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  background: #fff; /* Ensures white background behind the PDF while loading */
+}
+
+.pdf-container iframe {
+  border: none;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .video-grid {
     flex-direction: column;
