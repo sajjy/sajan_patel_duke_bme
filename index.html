@@ -271,6 +271,35 @@ layout: default
 
     <div class="project-card reverse">
         <div class="project-text">
+            <h2>ECoG Signal Processing</h2>
+            <p>A signal processing pipeline analyzing 64-channel electrocorticography (ECoG) data to 
+              map auditory networks and detect mismatch negativity (MMN) using Short-Time Fourier Transforms (STFT)
+               and event-related potential (ERP) cross-correlation.</p>
+            <a href="{{ '/projects/ecog_dsp.html' | relative_url }}" class="btn">Read More →</a>
+
+            <div class="tech-tags">
+              <span class="tag">
+                <img src="{{ '/assets/tech-logos/python.svg' | relative_url }}" alt="Python">
+                Python
+              </span>
+            </div>
+        </div>
+
+        <div class="project-video">
+        <div class="video-responsive">
+          <iframe 
+            src="https://www.youtube.com/embed/gHC28et8Wow?rel=0&modestbranding=1" 
+            title="ECoG Signal Processing"   
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-text">
             <h2>Electrical Modeling of Neuron & Propagation of Action Potential</h2>
             <p>A computational Python model that treats the neuron as a complex electrical circuit, utilizing the 
                 Hodgkin-Huxley equations to simulate how stimuli—such as from an implanted electrode—interact with ion channels 
@@ -289,7 +318,7 @@ layout: default
         </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card reverse">
         <div class="project-text">
             <h2>OXTR Expression in the Hypothalamus and Amygdala Following MDMA Administration</h2>
             <p>A neuroscience research project utilizing RT-qPCR and R-based data analysis to investigate
@@ -312,7 +341,7 @@ layout: default
   
     </div>
 
-    <div class="project-card reverse">
+    <div class="project-card">
         <div class="project-text">
             <h2>Data Imputation and Graph-based Approach for Post-Stroke Immune System Response Profiling</h2>
             <p>A computational biology study leveraging data imputation and Leiden clustering in Python to successfully
