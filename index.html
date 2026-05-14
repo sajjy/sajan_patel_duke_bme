@@ -2,12 +2,12 @@
 layout: default
 ---
 
-  <!-- Hero Section -->
+  <!-- HERO SECTION -->
   <section id="hero">
     <div class="split left"></div>
     <div class="split right"></div>
 
-    <!-- Hero Card -->
+    <!-- HERO CARD -->
     <div class="hero-card" id="hero-card">
       <div class="hero-left">
         <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Profile Picture" class="hero-pic">
@@ -48,7 +48,7 @@ layout: default
     </div>
   </section>
   
-  <!-- Projects Section -->
+  <!-- CURRENT PROJECTS SECTION -->
   <section id="current-projects">
     <h1>What I'm Building Now...</h1>
 
@@ -186,6 +186,7 @@ layout: default
 
     </section>
 
+    <!-- OLDER PROJECTS SECTION -->
     <section id="projects">
 
     <h1>Projects</h1>
@@ -209,7 +210,7 @@ layout: default
 
       </div>
       <div class="project-image">
-        <img id="project-7-images" src="{{ '/assets/project-images/axon_recording/axon_recording_animation.gif' | relative_url }}" alt="Project7_image" loading="lazy">
+        <img src="{{ '/assets/project-images/axon_recording/axon_recording_animation.gif' | relative_url }}" alt="Project7_image" loading="lazy">
       </div>
     </div>
 
@@ -218,6 +219,10 @@ layout: default
             <h2>Full Basic Microprocessor with MIPS Assembly Game</h2>
             <p>A full basic microprocessor designed in SystemVerilog, featuring a complex MIPS assembly game.</p>
             <a href="{{ '/projects/microprocessor.html' | relative_url }}" class="btn">Read More →</a>
+        </div>
+
+        <div class="project-image">
+          <img src="{{ '/assets/project-images/microprocessor-mips/nexus-board.png' | relative_url }}" alt="Project_image" loading="lazy">
         </div>
     </div>
 
@@ -228,6 +233,18 @@ layout: default
                 data for real-time positional tracking and obstacle avoidance.</p>
             <a href="{{ '/projects/lego_robot.html' | relative_url }}" class="btn">Read More →</a>
         </div>
+
+        <div class="project-video">
+        <div class="video-responsive">
+          <iframe 
+            src="https://www.youtube.com/embed/SNu-jkS3RpE?rel=0&modestbranding=1" 
+            title="Python-powered Robot Navigates Obstacle Course"  
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
     </div>
 
     <div class="project-card reverse">
@@ -238,6 +255,10 @@ layout: default
                 and myelination to trigger action potentials.</p>
             <a href="{{ '/projects/action_potential.html' | relative_url }}" class="btn">Read More →</a>
         </div>
+
+        <div class="project-image">
+          <img src="{{ '/assets/project-images/neuron_modeling/action_potential_ion_channels.png' | relative_url }}" alt="Project_image" loading="lazy">
+        </div>
     </div>
 
     <div class="project-card">
@@ -247,6 +268,14 @@ layout: default
                  how MDMA impacts oxytocin-receptor expression and contributes to prosocial behaviors.</p>
             <a href="{{ '/projects/mdma_oxytocin.html' | relative_url }}" class="btn">Read More →</a>
         </div>
+
+        <div class="project-image expandable">
+        <img id="project-3-images"
+            src="{{ '/assets/project-images/addiction-neuroscience/addiction-neuroscience-poster.jpg' | relative_url }}"
+            alt="Project3_image"
+            loading="lazy">
+      </div>
+  
     </div>
 
     <div class="project-card reverse">
@@ -256,11 +285,15 @@ layout: default
                  map immune system responses from incomplete clinical datasets.</p>
             <a href="{{ '/projects/stroke.html' | relative_url }}" class="btn">Read More →</a>
         </div>
+
+        <div class="project-image">
+          <img id="project-4-images" src="{{ '/assets/project-images/computational-biology/leiden-clustering.png' | relative_url }}" alt="Project4_image" loading="lazy">
+        </div>
     </div>
 
   </section>
 
-  <!-- About Me Section -->
+  <!-- ABOUT ME SECTION -->
   <section id="about-me">
     <h1>About </h1>
     <div class="project-card">
